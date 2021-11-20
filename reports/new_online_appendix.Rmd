@@ -1,0 +1,380 @@
+---
+title: "New Appendix"
+author: "Em Maloney"
+date: "11/19/2021"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+### Appendix A 
+
+#### All Occupational Identities
+
+### Occupations Table
+
+```{r}
+library(gssr)
+library(tidyverse)
+library(inteRact)
+library(knitr)
+library(here)
+library(ISCO08ConveRsions)
+library(janitor)
+library(gt) #tables
+library(gtExtras) #pretty tables
+
+#load the data - straight deference scores, entire matrix, the crosswalk, and the GSS
+deference_scores <- read_csv(here("data/BayesACT-MeanDeflection.csv"))
+id_block_info <- read_csv(here("data/block_info_bayesact.csv"))
+
+def_matrix <- read_csv(here("data/bayesact_deflections.csv"))
+cw <- read_csv(here("data/new_crosswalk.csv"))
+data("gss_all")
+#data("us_2015_full")
+
+#a bit of data cleaning 
+deference_scores <- deference_scores %>% 
+                    mutate(term = str_remove(term, "i_")) %>% 
+                    filter(term != "dishwasher")
+
+id_block_info <- id_block_info %>% select(term, blocks_4, E, P, A)
+
+identities_info <- left_join(id_block_info, deference_scores) %>% mutate(term = tolower(term))
+identities_info <- left_join(identities_info, cw)
+
+gss_all <- gss_all %>% 
+            select(isco88, isco08) %>% 
+            distinct()
+
+gss_join <- gss_all %>% 
+            filter(!is.na(isco08) & isco88 != 110 & isco08 != 9997) %>% 
+            mutate(isco08 = as.character(isco08)) %>% 
+            rowwise() %>% 
+            mutate(sei08 = isco08toisei08(isco08),
+                   siops08 = isco08tosiops08(isco08))
+
+new_df <- left_join(identities_info, gss_join)
+
+isco88_matches <- new_df %>% 
+                  group_by(term) %>%
+                  select(term, isco88) %>% distinct() %>% 
+                  summarise(isco88_matches = str_c(toString(isco88), collapse = ", "),
+                            avg_siops = ) %>% ungroup()
+
+full_df <- new_df %>%  group_by(term, blocks_4, def_score, E, P, A) %>% 
+                 summarise(def_score = round(def_score, digits = 2),
+                   avg_siops = mean(siops08) %>% round(digits = 2),
+                        avg_sei = mean(sei08) %>% round(digits = 2),
+                        isco08_matches = str_c(toString(isco08), collapse = ", ")) %>% 
+          ungroup() %>% 
+          distinct() %>% 
+          mutate(osg = case_when(blocks_4 == 1 ~ "Everyday Specialists",
+                                 blocks_4 == 2 ~ "Service-to-Society",
+                                 blocks_4 == 3 ~ "Disagreeably Powerful",
+                                 blocks_4 == 4 ~ "Actively Revered")) %>% select(-blocks_4)
+
+full_df <- left_join(full_df, isco88_matches)
+
+full_df <- full_df %>% select(term, osg, E, P, A, def_score, avg_siops, avg_sei, isco88_matches, isco08_matches)
+
+kable(full_df, caption = "Occupational Identities",
+      col.names = c("Identity", "OSG", "E", "P", "A","Deference Score", "Avg SIOPS", "Avg SEI", "ISCO88", "ISCO08"), format = "html", out = here("output/all_occ_id_table.html"))
+```
+
+\newpage
+
+### Appendix B 
+
+#### Descriptive Statistics for Analytic Sample 
+```{r}
+#selected occupational identities 
+ids <- read_csv(here("data/new_identity_selection_final.csv"))
+ids <- ids[1:16,]
+
+#create simulation dataset
+sims <- tibble(actor = rep(unique(ids$identity), 16),
+                   object = rep(unique(ids$identity), each = 16))
+
+#calculate the EPA for optimal behavior 
+sims_df <- sims %>% rowwise() %>%
+            mutate(b = list(maximally_confirm_behavior(actor = actor,
+                                                       object = object, equation = "us"))) %>%
+            unnest(b)
+
+
+library(sjPlot)
+#reading in the data from the qualtrics survey
+validation_data <- read_csv(here("data/rsf_data_new_mod_1.csv"))
+validation_data <- clean_names(validation_data)
+
+#reading in data about the modules
+obt_modules_info <- read_csv(here("data/obt_with_matches.csv"))
+obt_modules_info <- obt_modules_info %>% 
+                    mutate(old_name = tolower(old_name),
+                           old_name = if_else(str_detect(old_name, fixed("_")), paste0("x", old_name), old_name),
+                           identifier = paste0("x", identifier))
+
+#rename questions so they actually have meaning 
+validation_renamed <- validation_data %>% 
+                      rename_at(vars(obt_modules_info$old_name), ~ obt_modules_info$identifier)
+
+#cleaning the data
+#pivot longer so now each row is a question with 32 observations per person 
+#identify if passed manipulation check or not 
+#identify whether was the old modules 13 and 14 with REASSUREs rather than reassure
+#identify whether was the old module 1 with bends and not bluffs 
+library(lubridate)
+validation_clean <- validation_renamed %>% 
+                    relocate(manip_check) %>% 
+                    pivot_longer(x1_1_bl_bl:x16_4_tr_nr, 
+                                 names_to = "identifier", 
+                                 values_to = "selection") %>% 
+                    filter(!is.na(selection)) %>% 
+                    mutate(module = identifier) %>% 
+                    separate(module, into = c("module", "question", "act", "obj"), 
+                             sep = "_") %>% 
+                    mutate(module = str_remove(module, "x"),
+                           pass_manip_check = if_else(manip_check == "cheers", "x", ""),
+                           reject_manip_check = if_else(manip_check != "cheers", 
+                                                        "did not pass attention check", "")) %>% 
+                    filter(pass_manip_check == "x") %>% 
+                    mutate(date = mdy_hm(start_date),
+                           old_mod_13_14 = if_else((module == "13" | module == "14") &
+                                                     date < ymd_hms("2021-11-16 10:28:00"), 1, 0),
+                           new_mod_13_14 = if_else((module == "13" | module == "14") &
+                                                     date >= ymd_hms("2021-11-16 10:28:00"), 1, 0),
+                           new_mod_1 = if_else(module == 1 & date > ymd_hms("2021-11-17 01:00:00"), 1, 0),
+                           old_mod_1 = if_else(module == 1 & date < ymd_hms("2021-11-17 01:00:00"), 1, 0),
+                           age_std = scale(age, center = TRUE, scale = TRUE))
+
+
+#check the IP address thing 
+check_ip <- validation_clean %>% 
+            group_by(ip_address) %>% 
+            select(ip_address, response_id) %>% 
+            distinct() %>% mutate(count = n()) %>% filter(count > 1)
+
+validation_clean <- validation_clean %>% filter(!(ip_address %in% check_ip$ip_address))
+            
+
+#join the data with info on the questions
+validation_clean_matches <- left_join(validation_clean, obt_modules_info)
+
+#find the questions where I spelled coachs and mouths off to incorrectly in the obt_modules file 
+needs_fixing <- validation_clean_matches %>% 
+                mutate(selection = tolower(selection),
+                       optimal_behavior_all = tolower(optimal_behavior_all)) %>% 
+                filter((selection != optimal_behavior_all) & 
+                         (selection != stimuli_behavior_all)) %>% 
+                select(selection, optimal_behavior_all, stimuli_behavior_all) %>% distinct()
+
+#fix those misspellings 
+#identify whether respondent picked the optimal behavior
+validation_clean_matches <- validation_clean_matches %>% 
+                            mutate(lower_selection = tolower(selection),
+                                   lower_optimal_behavior_all = tolower(optimal_behavior_all),
+                                   lower_optimal_behavior_all = str_replace_all(lower_optimal_behavior_all,
+                                                                                "coachs", "coaches"),
+                                   stimuli_behavior_all = str_replace_all(stimuli_behavior_all,
+                                                                                "mouthes off to", "mouths off to")) %>% 
+                            mutate(chose_opt_behavior = if_else(selection == lower_optimal_behavior_all, 1, 0))
+
+#recalculate the distances for peace of mind 
+#standardize distance measure to help with the model
+obt_modules_original <- read_csv(here("data/obt_modules.csv"))
+obt_modules <- obt_modules_original %>% 
+               mutate(actor = str_replace_all(actor, " ", "_"),
+                      object = str_replace_all(object, " ", "_"),
+                      optimal_behavior = str_replace_all(optimal_behavior, " ", "_"),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, " ", "_"),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, "bend", "bluff"),
+                      optimal_behavior = tolower(optimal_behavior),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, "baits", "bait")) %>% 
+              select(actor, object, optimal_behavior, stimuli_behavior, mod, gp) %>% 
+              pivot_longer(optimal_behavior:stimuli_behavior, names_to = "behavior_type", values_to = "opt_term") %>% 
+              left_join(sims_df) %>% select(-term) %>% mutate(term = opt_term) %>% select(-opt_term) %>% 
+              left_join(us_2015_full) %>% 
+              filter(type == "behavior") %>% 
+              select(-c(E2, P2, A2, type, country, year)) %>% 
+              rowwise() %>% 
+              mutate(distance = (E - opt_E)^2 + (P - opt_P)^2 + (A - opt_A)^2) %>% 
+              select(actor, object, mod, gp, behavior_type, distance) %>% 
+              pivot_wider(names_from = behavior_type, values_from = distance) %>% 
+              mutate(final_distance = abs(stimuli_behavior - optimal_behavior),
+                     final_distance_std = scale(final_distance, center = TRUE, scale = TRUE)) %>% 
+              mutate(act_initial = case_when(actor == "bailiff" ~ "bl",
+                                                   actor == "civil_engineer" ~ "ce",
+                                                   actor == "cook" ~ "ck",
+                                                   actor == "crane_operator" ~ "co",
+                                                   actor == "defense_attorney" ~ "da",
+                                                   actor == "dental_hygienist" ~ "dh",
+                                                   actor == "dentist" ~ "dt",
+                                                   actor == "firefighter" ~ "ff",
+                                                   actor == "foreman" ~ "fm",
+                                                   actor == "musician" ~ "mu",
+                                                   actor == "nurse" ~ "nr",
+                                                   actor == "nutritionist" ~ "nt",
+                                                   actor == "pediatrician" ~ "pd",
+                                                   actor == "surgeon" ~ "sr",
+                                                   actor == "teacher" ~ "tr",
+                                                   actor == "technician" ~ "te"),
+                           obj_initial = case_when(object == "bailiff" ~ "bl",
+                                                   object == "civil_engineer" ~ "ce",
+                                                   object == "cook" ~ "ck",
+                                                   object == "crane_operator" ~ "co",
+                                                   object == "defense_attorney" ~ "da",
+                                                   object == "dental_hygienist" ~ "dh",
+                                                   object == "dentist" ~ "dt",
+                                                   object == "firefighter" ~ "ff",
+                                                   object == "foreman" ~ "fm",
+                                                   object == "musician" ~ "mu",
+                                                   object == "nurse" ~ "nr",
+                                                   object == "nutritionist" ~ "nt",
+                                                   object == "pediatrician" ~ "pd",
+                                                   object == "surgeon" ~ "sr",
+                                                   object == "teacher" ~ "tr",
+                                                   object == "technician" ~ "te"),
+                           identifier = paste(mod, gp, act_initial, obj_initial, sep = "_"),
+                           identifier = paste0("x", identifier))
+  
+obt_og_join <- obt_modules_original %>% select(actor, object, mod, gp, optimal_behavior, stimuli_behavior)            
+obt_modules_appendix <- obt_modules %>% 
+                        select(mod, gp, actor, object, 
+                               final_distance, final_distance_std, identifier) %>% 
+                        mutate(actor = str_replace_all(actor, "_", " "),
+                               object = str_replace_all(object, "_", " ")) %>% 
+                        left_join(obt_og_join) %>% 
+                        select(mod, gp, actor, object, optimal_behavior, 
+                               stimuli_behavior, final_distance, final_distance_std) %>% 
+                        mutate(final_distance_std = as.numeric(final_distance_std)) %>% 
+                        gt() %>% 
+                        fmt_number(
+                        columns = c(final_distance,final_distance_std),
+                        decimals = 3,
+                        use_seps = FALSE)
+
+validation_clean_analysis <- left_join(validation_clean_matches, obt_modules, by = "identifier")
+#sanity check :) 
+check_test <- validation_clean_analysis %>% filter(is.na(final_distance_std))
+
+
+#making main analysis data frame 
+validation_main_analysis <- validation_clean_analysis %>% 
+                            filter(old_mod_13_14 != 1) %>% 
+                            filter(old_mod_1 != 1)
+
+library(gtsummary)
+descriptive_table <- validation_main_analysis %>% 
+                     group_by(response_id) %>% 
+                     slice(1) %>% 
+                     ungroup() %>% 
+                     mutate(module = as.double(module),
+                            module = as.factor(module),
+                            race_simplified = if_else(str_detect(race_ethnicity, ","), "Mixed Race",
+                                                      race_ethnicity),
+                            education = factor(education, levels = c("Some high school, no degree",
+                                                                     "High school graduate or equivalent",
+                                                                     "Vocational trade program or apprenticeship",
+                                                                     "Some college, no degree",
+                                                                     "Bachelor's degree",
+                                                                     "Master's degree",
+                                                                     "Doctorate (PhD) or some other advanced degree (e.g. M.D., or J.D.)"))) %>% 
+                     select(age, sex, module, race_ethnicity, race_simplified, education) 
+
+tbl_summary(descriptive_table)
+```
+
+
+### Appendix C
+
+#### Full List of Stimuli 
+```{r}
+obt_modules_appendix
+```
+
+
+### Appendix D 
+
+#### Modeling Discussion 
+
+In total, 16 modules were fielded of stimuli. Modules 1, 13, and 14 were re-run due to errors in one stimuli each of those three modules. In module 1, the behavior bends was included, which we decided was not appropriate for an actor-behavior-object construction. When we re-ran the module, we replaced that behavior with another close in EPA space: bluffs. In modules 13 and 14, the optimal behavior for events involving surgeon was accidentally capitalized, so we re-ran it after making the behavior lowercase. In the robustness checks, we run all three models (baseline, only distance, and distance including controls) with varying levels of the sample. In the first, we display the results from the main text: after removing individuals who failed the manipulation check, and only including respondents from the correct stimuli for modules 1, 13, and 14. In the second set of models, we include both the earlier set of respondents who answered the old set of stimuli for modules 1, 13, and 14 and those who responded to the new set of stimuli. 
+
+#### Robustness Checks 
+```{r}
+
+#main models from the text
+library(lme4)
+baseline_mod_freq <- glmer(formula = chose_opt_behavior ~ (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+distance_mod_freq <- glmer(formula = chose_opt_behavior ~ final_distance_std + 
+                           (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+distance_mod_freq_control <- glmer(formula = chose_opt_behavior ~ final_distance_std + sex + education +
+                                age_std + (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+stargazer::stargazer(baseline_mod_freq, distance_mod_freq, distance_mod_freq_control,
+                     format = "html", out = here("output/main_model_output.html"),
+                     dep.var.labels = c("Chose Optimal Behavior"),
+                     covariate.labels = c("Distance (Std)",
+                                        "Sex: Male",
+                                        "Education: Advanced Degree",
+                                        "Education: HS degree or equivalent",
+                                        "Education: Master's degree",
+                                        "Education: Some college, no degree",
+                                        "Education: Vocational trade program",
+                                        "Age (std)",
+                                        "Intercept"))
+
+                     
+```
+
+```{r}
+validation_all_data <- validation_clean_analysis
+
+validation_only_old_data <- validation_clean_analysis %>% 
+                            filter(new_mod_13_14 != 1) %>% 
+                            filter(new_mod_1 != 1) 
+
+
+baseline_mod_freq_check <- glmer(formula = chose_opt_behavior ~ (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_all_data)
+
+distance_mod_freq_check <- glmer(formula = chose_opt_behavior ~ final_distance_std + 
+                           (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_all_data)
+
+
+distance_mod_freq_control_check <- glmer(formula = chose_opt_behavior ~ final_distance_std + sex + education +
+                                age_std + (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_all_data)
+
+stargazer::stargazer(baseline_mod_freq_check, distance_mod_freq_check, distance_mod_freq_control_check,
+                     format = "html", out = here("output/check_model_output.html"),
+                     dep.var.labels = c("Chose Optimal Behavior"),
+                     covariate.labels = c("Distance (Std)",
+                                        "Sex: Male",
+                                        "Education: Advanced Degree",
+                                        "Education: HS degree or equivalent",
+                                        "Education: Master's degree",
+                                        "Education: Some college, no degree",
+                                        "Education: Vocational trade program",
+                                        "Age (std)",
+                                        "Intercept"))
+
+```
+

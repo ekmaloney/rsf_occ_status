@@ -1,0 +1,513 @@
+actor,object,mod,gp,optimal_behavior_all,stimuli_behavior_all,identifier,old_name
+bailiff,bailiff,1,1,shows something to,gets even with,1_1_bl_bl,qid442
+cook,defense attorney,1,1,chats with,restrains,1_1_ck_da,1_1_ck_da
+defense attorney,firefighter,1,1,toasts,insults,1_1_da_ff,1_1_da_ff
+dentist,crane operator,1,1,serves,fails,1_1_dt_co,1_1_dt_co
+musician,pediatrician,1,1,jokes with,discredits,1_1_mu_pd,1_1_mu_pd
+nutritionist,foreman,1,1,turns to,confronts,1_1_nt_fm,1_1_nt_fm
+surgeon,nutritionist,1,1,guides,neglects,1_1_sr_nt,1_1_sr_nt
+technician,technician,1,1,asks about,bluffs,1_1_te_te,1_1_te_te
+bailiff,technician,1,2,shows something to,hunts for,1_2_bl_te,1_2_bl_te
+cook,nutritionist,1,2,toasts,disillusions,1_2_ck_nt,1_2_ck_nt
+dental hygienist,pediatrician,1,2,asks about,pesters,1_2_dh_pd,1_2_dh_pd
+firefighter,foreman,1,2,coachs,plots against,1_2_ff_fm,1_2_ff_fm
+foreman,firefighter,1,2,asks about,baits,1_2_fm_ff,1_2_fm_ff
+nurse,crane operator,1,2,dines with,inspires,1_2_nr_co,1_2_nr_co
+surgeon,defense attorney,1,2,counsels,gives in to,1_2_sr_da,1_2_sr_da
+technician,bailiff,1,2,serves,plots against,1_2_te_bl,1_2_te_bl
+civil engineer,surgeon,1,3,asks about,babies,1_3_ce_sr,1_3_ce_sr
+crane operator,musician,1,3,asks about,misjudges,1_3_co_mu,1_3_co_mu
+defense attorney,teacher,1,3,calls,torments,1_3_da_tr,1_3_da_tr
+dentist,nurse,1,3,answers,fears,1_3_dt_nr,1_3_dt_nr
+musician,dental hygienist,1,3,chats with,displeases,1_3_mu_dh,1_3_mu_dh
+nutritionist,civil engineer,1,3,dines with,reproaches,1_3_nt_ce,1_3_nt_ce
+pediatrician,dentist,1,3,treats,scares,1_3_pd_dt,1_3_pd_dt
+teacher,cook,1,3,attends to,incites,1_3_tr_ck,1_3_tr_ck
+civil engineer,dentist,1,4,turns to,amazes,1_4_ce_dt,1_4_ce_dt
+crane operator,cook,1,4,asks about,denies,1_4_co_ck,1_4_co_ck
+dental hygienist,dental hygienist,1,4,asks about,deflates,1_4_dh_dh,1_4_dh_dh
+firefighter,civil engineer,1,4,congratulates,kowtows to,1_4_ff_ce,1_4_ff_ce
+foreman,teacher,1,4,asks about,disqualifies,1_4_fm_tr,1_4_fm_tr
+nurse,nurse,1,4,replies to,alarms,1_4_nr_nr,1_4_nr_nr
+pediatrician,surgeon,1,4,eats with,nags,1_4_pd_sr,1_4_pd_sr
+teacher,musician,1,4,explains something to,extols,1_4_tr_mu,1_4_tr_mu
+bailiff,technician,2,1,shows something to,distrusts,2_1_bl_te,2_1_bl_te
+cook,nutritionist,2,1,toasts,jeers,2_1_ck_nt,2_1_ck_nt
+defense attorney,bailiff,2,1,bargains with,harangues,2_1_da_bl,2_1_da_bl
+dentist,defense attorney,2,1,serves,corners,2_1_dt_da,2_1_dt_da
+musician,nutritionist,2,1,chats with,lies to,2_1_mu_nt,2_1_mu_nt
+nutritionist,technician,2,1,turns to,shafts,2_1_nt_te,2_1_nt_te
+surgeon,defense attorney,2,1,counsels,constrains,2_1_sr_da,2_1_sr_da
+technician,bailiff,2,1,serves,impedes,2_1_te_bl,2_1_te_bl
+bailiff,bailiff,2,2,shows something to,leaves,2_2_bl_bl,2_2_bl_bl
+cook,defense attorney,2,2,chats with,scowls at,2_2_ck_da,2_2_ck_da
+defense attorney,technician,2,2,acclaims,upsets,2_2_da_te,2_2_da_te
+dentist,nutritionist,2,2,consults,provokes,2_2_dt_nt,2_2_dt_nt
+musician,defense attorney,2,2,calls,condemns,2_2_mu_da,2_2_mu_da
+nutritionist,bailiff,2,2,turns to,undermines,2_2_nt_bl,2_2_nt_bl
+surgeon,nutritionist,2,2,guides,shouts at,2_2_sr_nt,2_2_sr_nt
+technician,technician,2,2,asks about,eludes,2_2_te_te,2_2_te_te
+civil engineer,dentist,2,3,turns to,misunderstands,2_3_ce_dt,2_3_ce_dt
+crane operator,cook,2,3,asks about,accosts,2_3_co_ck,2_3_co_ck
+dental hygienist,surgeon,2,3,asks about,scoffs at,2_3_dh_sr,2_3_dh_sr
+firefighter,musician,2,3,congratulates,poohes pooh,2_3_ff_mu,2_3_ff_mu
+foreman,dentist,2,3,shows something to,elects,2_3_fm_dt,2_3_fm_dt
+nurse,cook,2,3,replies to,chews out,2_3_nr_ck,2_3_nr_ck
+pediatrician,surgeon,2,3,eats with,grouses at,2_3_pd_sr,2_3_pd_sr
+teacher,musician,2,3,explains something to,cross examines,2_3_tr_mu,2_3_tr_mu
+civil engineer,surgeon,2,4,asks about,cuts the pay of,2_4_ce_sr,2_4_ce_sr
+crane operator,musician,2,4,asks about,walks out on,2_4_co_mu,2_4_co_mu
+dental hygienist,dentist,2,4,asks about,supports,2_4_dh_dt,2_4_dh_dt
+firefighter,cook,2,4,amuses,analyzes,2_4_ff_ck,2_4_ff_ck
+foreman,surgeon,2,4,asks about,submits to,2_4_fm_sr,2_4_fm_sr
+nurse,musician,2,4,invites,grapples with,2_4_nr_mu,2_4_nr_mu
+pediatrician,dentist,2,4,treats,shushes,2_4_pd_dt,2_4_pd_dt
+teacher,cook,2,4,attends to,endures,2_4_tr_ck,2_4_tr_ck
+bailiff,foreman,3,1,shows something to,criticizes,3_1_bl_fm,3_1_bl_fm
+cook,pediatrician,3,1,jokes with,bewilders,3_1_ck_pd,3_1_ck_pd
+defense attorney,technician,3,1,acclaims,endangers,3_1_da_te,3_1_da_te
+dentist,nutritionist,3,1,consults,jeers,3_1_dt_nt,3_1_dt_nt
+musician,defense attorney,3,1,calls,rejects,3_1_mu_da,3_1_mu_da
+nutritionist,bailiff,3,1,turns to,detains,3_1_nt_bl,3_1_nt_bl
+surgeon,crane operator,3,1,apologizes to,idealizes,3_1_sr_co,3_1_sr_co
+technician,firefighter,3,1,chats with,ridicules,3_1_te_ff,3_1_te_ff
+civil engineer,firefighter,3,2,answers,sentences,3_2_ce_ff,3_2_ce_ff
+crane operator,crane operator,3,2,shows something to,misunderstands,3_2_co_co,3_2_co_co
+defense attorney,bailiff,3,2,bargains with,submits to,3_2_da_bl,3_2_da_bl
+dentist,defense attorney,3,2,serves,double crosses,3_2_dt_da,3_2_dt_da
+musician,nutritionist,3,2,chats with,observes,3_2_mu_nt,3_2_mu_nt
+nutritionist,technician,3,2,turns to,denounces,3_2_nt_te,3_2_nt_te
+pediatrician,pediatrician,3,2,rewards,ostracizes,3_2_pd_pd,3_2_pd_pd
+teacher,foreman,3,2,considers,deserts,3_2_tr_fm,3_2_tr_fm
+bailiff,civil engineer,3,3,serves,bickers with,3_3_bl_ce,3_3_bl_ce
+cook,dental hygienist,3,3,chats with,quiets,3_3_ck_dh,3_3_ck_dh
+dental hygienist,dentist,3,3,asks about,baits,3_3_dh_dt,3_3_dh_dt
+firefighter,cook,3,3,amuses,annoys,3_3_ff_ck,3_3_ff_ck
+foreman,surgeon,3,3,asks about,subdues,3_3_fm_sr,3_3_fm_sr
+nurse,musician,3,3,invites,flees,3_3_nr_mu,3_3_nr_mu
+surgeon,nurse,3,3,guards,insults,3_3_sr_nr,3_3_sr_nr
+technician,teacher,3,3,asks about,envies,3_3_te_tr,3_3_te_tr
+civil engineer,teacher,3,4,turns to,interferes with,3_4_ce_tr,3_4_ce_tr
+crane operator,nurse,3,4,asks about,sneers at,3_4_co_nr,3_4_co_nr
+dental hygienist,surgeon,3,4,asks about,corners,3_4_dh_sr,3_4_dh_sr
+firefighter,musician,3,4,congratulates,bothers,3_4_ff_mu,3_4_ff_mu
+foreman,dentist,3,4,shows something to,hurries,3_4_fm_dt,3_4_fm_dt
+nurse,cook,3,4,replies to,maligns,3_4_nr_ck,3_4_nr_ck
+pediatrician,dental hygienist,3,4,advises,disregards,3_4_pd_dh,3_4_pd_dh
+teacher,civil engineer,3,4,pleases,hurts,3_4_tr_ce,3_4_tr_ce
+civil engineer,firefighter,4,1,answers,unnerves,4_1_ce_ff,4_1_ce_ff
+crane operator,crane operator,4,1,shows something to,mumbles to,4_1_co_co,4_1_co_co
+defense attorney,foreman,4,1,bargains with,accepts,4_1_da_fm,4_1_da_fm
+dentist,pediatrician,4,1,answers,dupes,4_1_dt_pd,4_1_dt_pd
+musician,crane operator,4,1,calls,screams at,4_1_mu_co,4_1_mu_co
+nutritionist,firefighter,4,1,answers,demands,4_1_nt_ff,4_1_nt_ff
+pediatrician,pediatrician,4,1,rewards,evades,4_1_pd_pd,4_1_pd_pd
+teacher,foreman,4,1,considers,silences,4_1_tr_fm,4_1_tr_fm
+bailiff,foreman,4,2,shows something to,confines,4_2_bl_fm,4_2_bl_fm
+cook,pediatrician,4,2,jokes with,disobeys,4_2_ck_pd,4_2_ck_pd
+dental hygienist,firefighter,4,2,asks about,hollers at,4_2_dh_ff,4_2_dh_ff
+firefighter,crane operator,4,2,coachs,examines,4_2_ff_co,4_2_ff_co
+foreman,pediatrician,4,2,asks about,gives in to,4_2_fm_pd,4_2_fm_pd
+nurse,foreman,4,2,admires,sickens,4_2_nr_fm,4_2_nr_fm
+surgeon,crane operator,4,2,apologizes to,surprises,4_2_sr_co,4_2_sr_co
+technician,firefighter,4,2,chats with,leers at,4_2_te_ff,4_2_te_ff
+civil engineer,teacher,4,3,turns to,upstages,4_3_ce_tr,QID522
+crane operator,nurse,4,3,asks about,mouthes off to,4_3_co_nr,QID523
+defense attorney,civil engineer,4,3,calls,hypnotizes,4_3_da_ce,QID524
+dentist,dental hygienist,4,3,consults,reproaches,4_3_dt_dh,QID525
+musician,nurse,4,3,jokes with,suspects,4_3_mu_nr,QID526
+nutritionist,teacher,4,3,dines with,misinforms,4_3_nt_tr,QID527
+pediatrician,dental hygienist,4,3,advises,bows to,4_3_pd_dh,QID528
+teacher,civil engineer,4,3,pleases,laughs at,4_3_tr_ce,QID529
+bailiff,civil engineer,4,4,serves,yells at,4_4_bl_ce,QID530
+cook,dental hygienist,4,4,chats with,confuses,4_4_ck_dh,QID531
+dental hygienist,teacher,4,4,asks about,reproaches,4_4_dh_tr,QID532
+firefighter,nurse,4,4,applauds,confuses,4_4_ff_nr,QID533
+foreman,dental hygienist,4,4,shows something to,discomforts,4_4_fm_dh,QID534
+nurse,civil engineer,4,4,dines with,hypnotizes,4_4_nr_ce,QID535
+surgeon,nurse,4,4,guards,overworks,4_4_sr_nr,QID536
+technician,teacher,4,4,asks about,teaches,4_4_te_tr,QID537
+civil engineer,bailiff,5,1,serves,mothers,5_1_ce_bl,QID538
+crane operator,defense attorney,5,1,sits next to,bawls out,5_1_co_da,QID539
+dental hygienist,firefighter,5,1,asks about,misinforms,5_1_dh_ff,QID540
+firefighter,crane operator,5,1,coachs,depraves,5_1_ff_co,QID541
+foreman,pediatrician,5,1,asks about,disobeys,5_1_fm_pd,QID542
+nurse,foreman,5,1,admires,eludes,5_1_nr_fm,QID543
+pediatrician,nutritionist,5,1,raises the pay of,underrates,5_1_pd_nt,QID544
+teacher,technician,5,1,experiences,bugs,5_1_tr_te,QID545
+civil engineer,technician,5,2,turns to,gossips with,5_2_ce_te,QID546
+crane operator,nutritionist,5,2,asks about,upstages,5_2_co_nt,QID547
+defense attorney,foreman,5,2,bargains with,dismisses,5_2_da_fm,QID548
+dentist,pediatrician,5,2,answers,offends,5_2_dt_pd,QID549
+musician,crane operator,5,2,calls,misleads,5_2_mu_co,QID550
+nutritionist,firefighter,5,2,answers,saves,5_2_nt_ff,QID551
+pediatrician,defense attorney,5,2,grins at,orders,5_2_pd_da,QID552
+teacher,bailiff,5,2,considers,demands,5_2_tr_bl,QID553
+bailiff,musician,5,3,identifies,assists,5_3_bl_mu,QID554
+cook,surgeon,5,3,jokes with,hypnotizes,5_3_ck_sr,QID555
+dental hygienist,teacher,5,3,asks about,berates,5_3_dh_tr,QID556
+firefighter,nurse,5,3,applauds,frames,5_3_ff_nr,QID557
+foreman,dental hygienist,5,3,shows something to,snuggles,5_3_fm_dh,QID558
+nurse,civil engineer,5,3,dines with,obeys,5_3_nr_ce,QID559
+surgeon,cook,5,3,guides,begs,5_3_sr_ck,QID560
+technician,dentist,5,3,asks about,discriminates against,5_3_te_dt,QID561
+bailiff,cook,5,4,asks about,laughs at,5_4_bl_ck,QID562
+cook,dentist,5,4,chats with,flusters,5_4_ck_dt,QID563
+defense attorney,civil engineer,5,4,calls,sickens,5_4_da_ce,QID564
+dentist,dental hygienist,5,4,consults,hounds,5_4_dt_dh,QID565
+musician,nurse,5,4,jokes with,criticizes,5_4_mu_nr,QID566
+nutritionist,teacher,5,4,dines with,incriminates,5_4_nt_tr,QID567
+surgeon,musician,5,4,guides,makes fun of,5_4_sr_mu,QID568
+technician,surgeon,5,4,chats with,underrates,5_4_te_sr,QID569
+civil engineer,technician,6,1,turns to,seizes,6_1_ce_te,QID570
+crane operator,nutritionist,6,1,asks about,hinders,6_1_co_nt,QID571
+dental hygienist,bailiff,6,1,serves,hushes,6_1_dh_bl,QID572
+firefighter,defense attorney,6,1,greets,hails,6_1_ff_da,QID573
+foreman,nutritionist,6,1,asks about,borrows money from,6_1_fm_nt,QID574
+nurse,technician,6,1,invites,babies,6_1_nr_te,QID575
+pediatrician,defense attorney,6,1,grins at,watches,6_1_pd_da,QID576
+teacher,bailiff,6,1,considers,hypnotizes,6_1_tr_bl,QID577
+civil engineer,bailiff,6,2,serves,debases,6_2_ce_bl,QID578
+crane operator,defense attorney,6,2,sits next to,defends,6_2_co_da,QID579
+dental hygienist,technician,6,2,asks about,mothers,6_2_dh_te,QID580
+firefighter,nutritionist,6,2,applauds,issarcastic toward,6_2_ff_nt,QID581
+foreman,defense attorney,6,2,emulates,hazes,6_2_fm_da,QID582
+nurse,bailiff,6,2,dines with,jests,6_2_nr_bl,QID583
+pediatrician,nutritionist,6,2,raises the pay of,misses,6_2_pd_nt,QID584
+teacher,technician,6,2,experiences,refuses,6_2_tr_te,QID585
+bailiff,cook,6,3,asks about,provokes,6_3_bl_ck,QID586
+cook,dentist,6,3,chats with,borrows money from,6_3_ck_dt,QID587
+defense attorney,musician,6,3,acclaims,monitors,6_3_da_mu,QID588
+dentist,surgeon,6,3,asks about,forgives,6_3_dt_sr,QID589
+musician,cook,6,3,chats with,evades,6_3_mu_ck,QID590
+nutritionist,dentist,6,3,turns to,shocks,6_3_nt_dt,QID591
+surgeon,musician,6,3,guides,needs,6_3_sr_mu,QID592
+technician,surgeon,6,3,chats with,detains,6_3_te_sr,QID593
+bailiff,musician,6,4,identifies,defames,6_4_bl_mu,QID594
+cook,surgeon,6,4,jokes with,forgets,6_4_ck_sr,QID595
+defense attorney,cook,6,4,acclaims,stymies,6_4_da_ck,QID596
+dentist,dentist,6,4,turns to,admonishes,6_4_dt_dt,QID597
+musician,musician,6,4,chats with,displeases,6_4_mu_mu,QID598
+nutritionist,surgeon,6,4,dines with,repulses,6_4_nt_sr,QID599
+surgeon,cook,6,4,guides,neglects,6_4_sr_ck,QID600
+technician,dentist,6,4,asks about,chides,6_4_te_dt,QID601
+civil engineer,foreman,7,1,excuses,stares at,7_1_ce_fm,QID602
+crane operator,pediatrician,7,1,asks about,loathes,7_1_co_pd,QID603
+dental hygienist,technician,7,1,asks about,walks out on,7_1_dh_te,QID604
+firefighter,nutritionist,7,1,applauds,bribes,7_1_ff_nt,QID605
+foreman,defense attorney,7,1,emulates,welcomes,7_1_fm_da,QID606
+nurse,bailiff,7,1,dines with,applauds,7_1_nr_bl,QID607
+pediatrician,crane operator,7,1,explains something to,dupes,7_1_pd_co,QID608
+teacher,firefighter,7,1,invites,abets,7_1_tr_ff,QID609
+bailiff,crane operator,7,2,shows something to,gawks at,7_2_bl_co,QID610
+cook,firefighter,7,2,jokes with,binds,7_2_ck_ff,QID611
+dental hygienist,bailiff,7,2,serves,defames,7_2_dh_bl,QID612
+firefighter,defense attorney,7,2,greets,patronizes,7_2_ff_da,QID613
+foreman,nutritionist,7,2,asks about,doubts,7_2_fm_nt,QID614
+nurse,technician,7,2,invites,chides,7_2_nr_te,QID615
+surgeon,foreman,7,2,counsels,upstages,7_2_sr_fm,QID616
+technician,pediatrician,7,2,chats with,repulses,7_2_te_pd,QID617
+civil engineer,civil engineer,7,3,turns to,hassles,7_3_ce_ce,QID618
+crane operator,dental hygienist,7,3,asks about,frightens,7_3_co_dh,QID619
+defense attorney,cook,7,3,acclaims,seizes,7_3_da_ck,QID620
+dentist,dentist,7,3,turns to,swindles,7_3_dt_dt,QID621
+musician,musician,7,3,chats with,obeys,7_3_mu_mu,QID622
+nutritionist,surgeon,7,3,dines with,disturbs,7_3_nt_sr,QID623
+pediatrician,nurse,7,3,rewards,defies,7_3_pd_nr,QID624
+teacher,teacher,7,3,invites,restrains,7_3_tr_tr,QID625
+bailiff,nurse,7,4,asks about,flees,7_4_bl_nr,QID626
+cook,teacher,7,4,jokes with,horrifies,7_4_ck_tr,QID627
+defense attorney,musician,7,4,acclaims,hazes,7_4_da_mu,QID628
+dentist,surgeon,7,4,asks about,angers,7_4_dt_sr,QID629
+musician,cook,7,4,chats with,chides,7_4_mu_ck,QID630
+nutritionist,dentist,7,4,turns to,follows,7_4_nt_dt,QID631
+surgeon,civil engineer,7,4,guides,manipulates,7_4_sr_ce,QID632
+technician,dental hygienist,7,4,asks about,bothers,7_4_te_dh,QID633
+bailiff,crane operator,8,1,shows something to,blabbers to,8_1_bl_co,QID634
+cook,firefighter,8,1,jokes with,seizes,8_1_ck_ff,QID635
+dental hygienist,foreman,8,1,serves,misunderstands,8_1_dh_fm,QID636
+firefighter,pediatrician,8,1,applauds,hunts for,8_1_ff_pd,QID637
+foreman,crane operator,8,1,shows something to,mocks,8_1_fm_co,QID638
+nurse,firefighter,8,1,chats with,double crosses,8_1_nr_ff,QID639
+surgeon,foreman,8,1,counsels,grabs,8_1_sr_fm,QID640
+technician,pediatrician,8,1,chats with,disillusions,8_1_te_pd,QID641
+civil engineer,foreman,8,2,excuses,criticizes,8_2_ce_fm,QID642
+crane operator,pediatrician,8,2,asks about,hates,8_2_co_pd,QID643
+defense attorney,crane operator,8,2,bargains with,delays payment to,8_2_da_co,QID644
+dentist,firefighter,8,2,answers,understands,8_2_dt_ff,QID645
+musician,foreman,8,2,calls,interrupts,8_2_mu_fm,QID646
+nutritionist,pediatrician,8,2,answers,needles,8_2_nt_pd,QID647
+pediatrician,crane operator,8,2,explains something to,shuns,8_2_pd_co,QID648
+teacher,firefighter,8,2,invites,obeys,8_2_tr_ff,QID649
+bailiff,nurse,8,3,asks about,liberates,8_3_bl_nr,QID650
+cook,teacher,8,3,jokes with,ensnares,8_3_ck_tr,QID651
+dental hygienist,civil engineer,8,3,asks about,harangues,8_3_dh_ce,QID652
+firefighter,dental hygienist,8,3,congratulates,comforts,8_3_ff_dh,QID653
+foreman,nurse,8,3,asks about,extorts,8_3_fm_nr,QID654
+nurse,teacher,8,3,replies to,envies,8_3_nr_tr,QID655
+surgeon,civil engineer,8,3,guides,spurns,8_3_sr_ce,QID656
+technician,dental hygienist,8,3,asks about,misinforms,8_3_te_dh,QID657
+civil engineer,civil engineer,8,4,turns to,shafts,8_4_ce_ce,QID658
+crane operator,dental hygienist,8,4,asks about,denigrates,8_4_co_dh,QID659
+defense attorney,nurse,8,4,acclaims,coerces,8_4_da_nr,QID660
+dentist,teacher,8,4,asks about,despises,8_4_dt_tr,QID661
+musician,civil engineer,8,4,chats with,bluffs,8_4_mu_ce,QID662
+nutritionist,dental hygienist,8,4,turns to,nags,8_4_nt_dh,QID663
+pediatrician,nurse,8,4,rewards,idealizes,8_4_pd_nr,QID664
+teacher,teacher,8,4,invites,punishes,8_4_tr_tr,QID665
+bailiff,defense attorney,9,1,sits next to,excludes,9_1_bl_da,QID666
+cook,bailiff,9,1,chats with,soothes,9_1_ck_bl,QID667
+defense attorney,crane operator,9,1,bargains with,mimics,9_1_da_co,QID668
+dentist,firefighter,9,1,answers,tells off,9_1_dt_ff,QID669
+musician,foreman,9,1,calls,confuses,9_1_mu_fm,QID670
+nutritionist,pediatrician,9,1,answers,drives out,9_1_nt_pd,QID671
+surgeon,technician,9,1,guides,borrows money from,9_1_sr_te,QID672
+technician,nutritionist,9,1,asks about,offends,9_1_te_nt,QID673
+bailiff,nutritionist,9,2,escorts,chides,9_2_bl_nt,QID674
+cook,technician,9,2,chats with,provokes,9_2_ck_te,QID675
+dental hygienist,foreman,9,2,serves,heckles,9_2_dh_fm,QID676
+firefighter,pediatrician,9,2,applauds,scrutinizes,9_2_ff_pd,QID677
+foreman,crane operator,9,2,shows something to,scares,9_2_fm_co,QID678
+nurse,firefighter,9,2,chats with,obstructs,9_2_nr_ff,QID679
+surgeon,bailiff,9,2,counsels,frowns at,9_2_sr_bl,QID680
+technician,defense attorney,9,2,serves,fines,9_2_te_da,QID681
+civil engineer,musician,9,3,turns to,overcharges,9_3_ce_mu,QID682
+crane operator,surgeon,9,3,asks about,hurries,9_3_co_sr,QID683
+defense attorney,nurse,9,3,acclaims,upsets,9_3_da_nr,QID684
+dentist,teacher,9,3,asks about,insults,9_3_dt_tr,QID685
+musician,civil engineer,9,3,chats with,examines,9_3_mu_ce,QID686
+nutritionist,dental hygienist,9,3,turns to,giggles at,9_3_nt_dh,QID687
+pediatrician,cook,9,3,acknowledges,fails,9_3_pd_ck,QID688
+teacher,dentist,9,3,pleases,retaliates against,9_3_tr_dt,QID689
+civil engineer,cook,9,4,turns to,brushes off,9_4_ce_ck,QID690
+crane operator,dentist,9,4,asks about,blames,9_4_co_dt,QID691
+dental hygienist,civil engineer,9,4,asks about,hounds,9_4_dh_ce,QID692
+firefighter,dental hygienist,9,4,congratulates,dismays,9_4_ff_dh,QID693
+foreman,nurse,9,4,asks about,boxs,9_4_fm_nr,QID694
+nurse,teacher,9,4,replies to,tells off,9_4_nr_tr,QID695
+pediatrician,musician,9,4,treats,screams at,9_4_pd_mu,QID696
+teacher,surgeon,9,4,replies to,jests,9_4_tr_sr,QID697
+bailiff,nutritionist,10,1,escorts,imitates,10_1_bl_nt,QID698
+cook,technician,10,1,chats with,disregards,10_1_ck_te,QID699
+defense attorney,defense attorney,10,1,bargains with,bugs,10_1_da_da,QID700
+dentist,bailiff,10,1,serves,assists,10_1_dt_bl,QID701
+musician,technician,10,1,chats with,disbelieves,10_1_mu_te,QID702
+nutritionist,nutritionist,10,1,answers,enrages,10_1_nt_nt,QID703
+surgeon,bailiff,10,1,counsels,demoralizes,10_1_sr_bl,QID704
+technician,defense attorney,10,1,serves,dares,10_1_te_da,QID705
+bailiff,defense attorney,10,2,sits next to,terrorizes,10_2_bl_da,QID706
+cook,bailiff,10,2,chats with,chides,10_2_ck_bl,QID707
+defense attorney,nutritionist,10,2,acclaims,plots against,10_2_da_nt,QID708
+dentist,technician,10,2,turns to,stammers at,10_2_dt_te,QID709
+musician,bailiff,10,2,calls,snubs,10_2_mu_bl,QID710
+nutritionist,defense attorney,10,2,serves,repulses,10_2_nt_da,QID711
+surgeon,technician,10,2,guides,banters with,10_2_sr_te,QID712
+technician,nutritionist,10,2,asks about,sneers at,10_2_te_nt,QID713
+civil engineer,cook,10,3,turns to,distresses,10_3_ce_ck,QID714
+crane operator,dentist,10,3,asks about,hates,10_3_co_dt,QID715
+dental hygienist,musician,10,3,asks about,bawls out,10_3_dh_mu,QID716
+firefighter,surgeon,10,3,laughs with,has a heart to heart talk with,10_3_ff_sr,QID717
+foreman,cook,10,3,asks about,threatens,10_3_fm_ck,QID718
+nurse,dentist,10,3,dines with,haunts,10_3_nr_dt,QID719
+pediatrician,musician,10,3,treats,monitors,10_3_pd_mu,QID720
+teacher,surgeon,10,3,replies to,studies,10_3_tr_sr,QID721
+civil engineer,musician,10,4,turns to,cheats,10_4_ce_mu,QID722
+crane operator,surgeon,10,4,asks about,abandons,10_4_co_sr,QID723
+dental hygienist,cook,10,4,asks about,obstructs,10_4_dh_ck,QID724
+firefighter,dentist,10,4,congratulates,reforms,10_4_ff_dt,QID725
+foreman,musician,10,4,shows something to,misleads,10_4_fm_mu,QID726
+nurse,surgeon,10,4,eats with,yells at,10_4_nr_sr,QID727
+pediatrician,cook,10,4,acknowledges,underrates,10_4_pd_ck,QID728
+teacher,dentist,10,4,pleases,stares at,10_4_tr_dt,QID729
+bailiff,pediatrician,11,1,asks about,argues with,11_1_bl_pd,QID730
+cook,foreman,11,1,chats with,bills,11_1_ck_fm,QID731
+defense attorney,nutritionist,11,1,acclaims,betrays,11_1_da_nt,QID732
+dentist,technician,11,1,turns to,overwhelms,11_1_dt_te,QID733
+musician,bailiff,11,1,calls,bribes,11_1_mu_bl,QID734
+nutritionist,defense attorney,11,1,serves,ribs,11_1_nt_da,QID735
+surgeon,firefighter,11,1,fosters,jeers,11_1_sr_ff,QID736
+technician,crane operator,11,1,asks about,envies,11_1_te_co,QID737
+civil engineer,crane operator,11,2,turns to,demotes,11_2_ce_co,QID738
+crane operator,firefighter,11,2,asks about,follows,11_2_co_ff,QID739
+defense attorney,defense attorney,11,2,bargains with,scoffs at,11_2_da_da,QID740
+dentist,bailiff,11,2,serves,apprehends,11_2_dt_bl,QID741
+musician,technician,11,2,chats with,inspects,11_2_mu_te,QID742
+nutritionist,nutritionist,11,2,answers,bans,11_2_nt_nt,QID743
+pediatrician,foreman,11,2,remembers,debases,11_2_pd_fm,QID744
+teacher,pediatrician,11,2,invites,demoralizes,11_2_tr_pd,QID745
+bailiff,dental hygienist,11,3,identifies,sneers at,11_3_bl_dh,QID746
+cook,civil engineer,11,3,chats with,flees,11_3_ck_ce,QID747
+dental hygienist,cook,11,3,asks about,abandons,11_3_dh_ck,QID748
+firefighter,dentist,11,3,congratulates,ridicules,11_3_ff_dt,QID749
+foreman,musician,11,3,shows something to,kowtows to,11_3_fm_mu,QID750
+nurse,surgeon,11,3,eats with,borrows money from,11_3_nr_sr,QID751
+surgeon,teacher,11,3,accepts,avenges,11_3_sr_tr,QID752
+technician,nurse,11,3,answers,shouts at,11_3_te_nr,QID753
+civil engineer,nurse,11,4,consults,has a heart to heart talk with,11_4_ce_nr,QID754
+crane operator,teacher,11,4,asks about,fools,11_4_co_tr,QID755
+dental hygienist,musician,11,4,asks about,overwhelms,11_4_dh_mu,QID756
+firefighter,surgeon,11,4,laughs with,fools,11_4_ff_sr,QID757
+foreman,cook,11,4,asks about,abhors,11_4_fm_ck,QID758
+nurse,dentist,11,4,dines with,mortifies,11_4_nr_dt,QID759
+pediatrician,civil engineer,11,4,acknowledges,mortifies,11_4_pd_ce,QID760
+teacher,dental hygienist,11,4,explains something to,banishes,11_4_tr_dh,QID761
+civil engineer,crane operator,12,1,turns to,upstages,12_1_ce_co,QID762
+crane operator,firefighter,12,1,asks about,badgers,12_1_co_ff,QID763
+defense attorney,pediatrician,12,1,toasts,disconcerts,12_1_da_pd,QID764
+dentist,foreman,12,1,excuses,rebuffs,12_1_dt_fm,QID765
+musician,firefighter,12,1,jokes with,lies to,12_1_mu_ff,QID766
+nutritionist,crane operator,12,1,turns to,cuts someone down to size,12_1_nt_co,QID767
+pediatrician,foreman,12,1,remembers,smirks at,12_1_pd_fm,QID768
+teacher,pediatrician,12,1,invites,embarrasses,12_1_tr_pd,QID769
+bailiff,pediatrician,12,2,asks about,conspires against,12_2_bl_pd,QID770
+cook,foreman,12,2,chats with,educates,12_2_ck_fm,QID771
+dental hygienist,crane operator,12,2,serves,cares for,12_2_dh_co,QID772
+firefighter,firefighter,12,2,excites,stammers at,12_2_ff_ff,QID773
+foreman,foreman,12,2,shows something to,exploits,12_2_fm_fm,QID774
+nurse,pediatrician,12,2,replies to,curses,12_2_nr_pd,QID775
+surgeon,firefighter,12,2,fosters,upsets,12_2_sr_ff,QID776
+technician,crane operator,12,2,asks about,deflates,12_2_te_co,QID777
+civil engineer,nurse,12,3,consults,expels,12_3_ce_nr,QID778
+crane operator,teacher,12,3,asks about,undermines,12_3_co_tr,QID779
+defense attorney,dental hygienist,12,3,acclaims,obeys,12_3_da_dh,QID780
+dentist,civil engineer,12,3,turns to,subdues,12_3_dt_ce,QID781
+musician,teacher,12,3,chats with,unfriends,12_3_mu_tr,QID782
+nutritionist,nurse,12,3,answers,coerces,12_3_nt_nr,QID783
+pediatrician,civil engineer,12,3,acknowledges,demotes,12_3_pd_ce,QID784
+teacher,dental hygienist,12,3,explains something to,someones is,12_3_tr_dh,QID785
+bailiff,dental hygienist,12,4,identifies,terrorizes,12_4_bl_dh,QID786
+cook,civil engineer,12,4,chats with,glares at,12_4_ck_ce,QID787
+dental hygienist,nurse,12,4,asks about,gives in to,12_4_dh_nr,QID788
+firefighter,teacher,12,4,laughs with,bequeathes to,12_4_ff_tr,QID789
+foreman,civil engineer,12,4,shows something to,hurts,12_4_fm_ce,QID790
+nurse,dental hygienist,12,4,invites,deserts,12_4_nr_dh,QID791
+surgeon,teacher,12,4,accepts,assesses,12_4_sr_tr,QID792
+technician,nurse,12,4,answers,scrutinizes,12_4_te_nr,QID793
+civil engineer,defense attorney,13,1,serves,defends,13_1_ce_da,QID794
+crane operator,bailiff,13,1,sits next to,jeers,13_1_co_bl,QID795
+dental hygienist,crane operator,13,1,serves,deprives,13_1_dh_co,QID796
+firefighter,firefighter,13,1,excites,deludes,13_1_ff_ff,QID797
+foreman,foreman,13,1,shows something to,disappoints,13_1_fm_fm,QID798
+nurse,pediatrician,13,1,replies to,befuddles,13_1_nr_pd,QID799
+pediatrician,technician,13,1,treats,horrifies,13_1_pd_te,QID800
+teacher,nutritionist,13,1,attends to,searches,13_1_tr_nt,QID801
+civil engineer,nutritionist,13,2,consults,cheers,13_2_ce_nt,QID802
+crane operator,technician,13,2,asks about,understands,13_2_co_te,QID803
+defense attorney,pediatrician,13,2,toasts,corrupts,13_2_da_pd,QID804
+dentist,foreman,13,2,excuses,caves in to,13_2_dt_fm,QID805
+musician,firefighter,13,2,jokes with,indoctrinates,13_2_mu_ff,QID806
+nutritionist,crane operator,13,2,turns to,beseeches,13_2_nt_co,QID807
+pediatrician,bailiff,13,2,grins at,snubs,13_2_pd_bl,QID808
+teacher,defense attorney,13,2,admires,peeks at,13_2_tr_da,QID809
+bailiff,surgeon,13,3,asks about,alerts,13_3_bl_sr,QID810
+cook,musician,13,3,chats with,curtsies to,13_3_ck_mu,QID811
+dental hygienist,nurse,13,3,asks about,infuriates,13_3_dh_nr,QID812
+firefighter,teacher,13,3,laughs with,quibbles with,13_3_ff_tr,QID813
+foreman,civil engineer,13,3,shows something to,apologizes to,13_3_fm_ce,QID814
+nurse,dental hygienist,13,3,invites,evades,13_3_nr_dh,QID815
+surgeon,dentist,13,3,guides,degrades,13_3_sr_dt,QID816
+technician,cook,13,3,asks about,condemns,13_3_te_ck,QID817
+bailiff,dentist,13,4,serves,apprehends,13_4_bl_dt,QID818
+cook,cook,13,4,toasts,flees,13_4_ck_ck,QID819
+defense attorney,dental hygienist,13,4,acclaims,frustrates,13_4_da_dh,QID820
+dentist,civil engineer,13,4,turns to,threatens,13_4_dt_ce,QID821
+musician,teacher,13,4,chats with,boxs,13_4_mu_tr,QID822
+nutritionist,nurse,13,4,answers,disputes,13_4_nt_nr,QID823
+surgeon,surgeon,13,4,REASSUREs,banishes,13_4_sr_sr,QID824
+technician,musician,13,4,asks about,ignores,13_4_te_mu,QID825
+civil engineer,nutritionist,14,1,consults,impedes,14_1_ce_nt,QID826
+crane operator,technician,14,1,asks about,dismisses,14_1_co_te,QID827
+dental hygienist,defense attorney,14,1,serves,implicates,14_1_dh_da,QID828
+firefighter,bailiff,14,1,greets,extorts,14_1_ff_bl,QID829
+foreman,technician,14,1,shows something to,makes fun of,14_1_fm_te,QID830
+nurse,nutritionist,14,1,replies to,gets even with,14_1_nr_nt,QID831
+pediatrician,bailiff,14,1,grins at,poohes pooh,14_1_pd_bl,QID832
+teacher,defense attorney,14,1,admires,dissuades,14_1_tr_da,QID833
+civil engineer,defense attorney,14,2,serves,grabs,14_2_ce_da,QID834
+crane operator,bailiff,14,2,sits next to,mortifies,14_2_co_bl,QID835
+dental hygienist,nutritionist,14,2,asks about,hushes,14_2_dh_nt,QID836
+firefighter,technician,14,2,congratulates,concedes to,14_2_ff_te,QID837
+foreman,bailiff,14,2,shows something to,displeases,14_2_fm_bl,QID838
+nurse,defense attorney,14,2,dines with,sneers at,14_2_nr_da,QID839
+pediatrician,technician,14,2,treats,yields to,14_2_pd_te,QID840
+teacher,nutritionist,14,2,attends to,banters with,14_2_tr_nt,QID841
+bailiff,dentist,14,3,serves,debases,14_3_bl_dt,QID842
+cook,cook,14,3,toasts,intimidates,14_3_ck_ck,QID843
+defense attorney,surgeon,14,3,chats with,hurries,14_3_da_sr,QID844
+dentist,musician,14,3,consults,tantalizes,14_3_dt_mu,QID845
+musician,dentist,14,3,chats with,leers at,14_3_mu_dt,QID846
+nutritionist,cook,14,3,dines with,blabbers to,14_3_nt_ck,QID847
+surgeon,surgeon,14,3,REASSUREs,alarms,14_3_sr_sr,QID848
+technician,musician,14,3,asks about,derides,14_3_te_mu,QID849
+bailiff,surgeon,14,4,asks about,doubts,14_4_bl_sr,QID850
+cook,musician,14,4,chats with,abets,14_4_ck_mu,QID851
+defense attorney,dentist,14,4,calls,forgives,14_4_da_dt,QID852
+dentist,cook,14,4,consults,baits,14_4_dt_ck,QID853
+musician,surgeon,14,4,jokes with,evades,14_4_mu_sr,QID854
+nutritionist,musician,14,4,turns to,angers,14_4_nt_mu,QID855
+surgeon,dentist,14,4,guides,badgers,14_4_sr_dt,QID856
+technician,cook,14,4,asks about,frustrates,14_4_te_ck,QID857
+civil engineer,pediatrician,15,1,answers,avoids,15_1_ce_pd,QID858
+crane operator,foreman,15,1,shows something to,distracts,15_1_co_fm,QID859
+dental hygienist,nutritionist,15,1,asks about,abuses,15_1_dh_nt,QID860
+firefighter,technician,15,1,congratulates,fears,15_1_ff_te,QID861
+foreman,bailiff,15,1,shows something to,drives out,15_1_fm_bl,QID862
+nurse,defense attorney,15,1,dines with,bluffs,15_1_nr_da,QID863
+pediatrician,firefighter,15,1,praises,obstructs,15_1_pd_ff,QID864
+teacher,crane operator,15,1,remembers,exhausts,15_1_tr_co,QID865
+bailiff,firefighter,15,2,asks about,babies,15_2_bl_ff,QID866
+cook,crane operator,15,2,chats with,scares,15_2_ck_co,QID867
+dental hygienist,defense attorney,15,2,serves,restrains,15_2_dh_da,QID868
+firefighter,bailiff,15,2,greets,antagonizes,15_2_ff_bl,QID869
+foreman,technician,15,2,shows something to,deflates,15_2_fm_te,QID870
+nurse,nutritionist,15,2,replies to,assesses,15_2_nr_nt,QID871
+surgeon,pediatrician,15,2,fosters,binds,15_2_sr_pd,QID872
+technician,foreman,15,2,serves,loathes,15_2_te_fm,QID873
+civil engineer,dental hygienist,15,3,turns to,baits,15_3_ce_dh,QID874
+crane operator,civil engineer,15,3,asks about,refuses,15_3_co_ce,QID875
+defense attorney,dentist,15,3,calls,confines,15_3_da_dt,QID876
+dentist,cook,15,3,consults,upsets,15_3_dt_ck,QID877
+musician,surgeon,15,3,jokes with,orders,15_3_mu_sr,QID878
+nutritionist,musician,15,3,turns to,stares down,15_3_nt_mu,QID879
+pediatrician,teacher,15,3,likes,yells at,15_3_pd_tr,QID880
+teacher,nurse,15,3,commends,terrorizes,15_3_tr_nr,QID881
+bailiff,teacher,15,4,asks about,flees,15_4_bl_tr,QID882
+cook,nurse,15,4,jokes with,misjudges,15_4_ck_nr,QID883
+defense attorney,surgeon,15,4,chats with,prods,15_4_da_sr,QID884
+dentist,musician,15,4,consults,sickens,15_4_dt_mu,QID885
+musician,dentist,15,4,chats with,grapples with,15_4_mu_dt,QID886
+nutritionist,cook,15,4,dines with,confounds,15_4_nt_ck,QID887
+surgeon,dental hygienist,15,4,guides,demeans,15_4_sr_dh,QID888
+technician,civil engineer,15,4,asks about,misjudges,15_4_te_ce,QID889
+bailiff,firefighter,16,1,asks about,dominates,16_1_bl_ff,QID890
+cook,crane operator,16,1,chats with,overlooks,16_1_ck_co,QID891
+dental hygienist,pediatrician,16,1,asks about,kowtows to,16_1_dh_pd,QID892
+firefighter,foreman,16,1,coachs,walks out on,16_1_ff_fm,QID893
+foreman,firefighter,16,1,asks about,disparages,16_1_fm_ff,QID894
+nurse,crane operator,16,1,dines with,tempts,16_1_nr_co,QID895
+surgeon,pediatrician,16,1,fosters,complies with,16_1_sr_pd,QID896
+technician,foreman,16,1,serves,stalls,16_1_te_fm,QID897
+civil engineer,pediatrician,16,2,answers,fools,16_2_ce_pd,QID898
+crane operator,foreman,16,2,shows something to,shocks,16_2_co_fm,QID899
+defense attorney,firefighter,16,2,toasts,hides,16_2_da_ff,QID900
+dentist,crane operator,16,2,serves,babies,16_2_dt_co,QID901
+musician,pediatrician,16,2,jokes with,frames,16_2_mu_pd,QID902
+nutritionist,foreman,16,2,turns to,freakouts,16_2_nt_fm,QID903
+pediatrician,firefighter,16,2,praises,comforts,16_2_pd_ff,QID904
+teacher,crane operator,16,2,remembers,rouses,16_2_tr_co,QID905
+bailiff,teacher,16,3,asks about,torments,16_3_bl_tr,QID906
+cook,nurse,16,3,jokes with,haunts,16_3_ck_nr,QID907
+dental hygienist,dental hygienist,16,3,asks about,subdues,16_3_dh_dh,QID908
+firefighter,civil engineer,16,3,congratulates,retaliates against,16_3_ff_ce,QID909
+foreman,teacher,16,3,asks about,fires from a job,16_3_fm_tr,QID910
+nurse,nurse,16,3,replies to,shorts change,16_3_nr_nr,QID911
+surgeon,dental hygienist,16,3,guides,indoctrinates,16_3_sr_dh,QID912
+technician,civil engineer,16,3,asks about,fines,16_3_te_ce,QID913
+civil engineer,dental hygienist,16,4,turns to,bickers with,16_4_ce_dh,QID914
+crane operator,civil engineer,16,4,asks about,sentences,16_4_co_ce,QID915
+defense attorney,teacher,16,4,calls,holds,16_4_da_tr,QID916
+dentist,nurse,16,4,answers,angers,16_4_dt_nr,QID917
+musician,dental hygienist,16,4,chats with,complains about,16_4_mu_dh,QID918
+nutritionist,civil engineer,16,4,dines with,hounds,16_4_nt_ce,QID919
+pediatrician,teacher,16,4,likes,doubts,16_4_pd_tr,QID920
+teacher,nurse,16,4,commends,queries,16_4_tr_nr,QID921

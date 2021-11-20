@@ -1,0 +1,513 @@
+actor,object,optimal_behavior,stimuli_behavior,distance,distance_distances,mod,gp,optimal_behavior_first_word,optimal_behavior_rest,optimal_behavior_all,stimuli_behavior_first_word,stimuli_behavior_rest,stimuli_behavior_all,actor_object_pair
+bailiff,bailiff,show something to,get even with,8.3626,8.391499407,1,1,shows,something to,shows something to,gets,even with,gets even with,bailiff __________ bailiff
+bailiff,bailiff,show something to,leave,8.9521,8.820999599,2,2,shows,something to,shows something to,leaves,NA,leaves,bailiff __________ bailiff
+bailiff,civil engineer,serve,bicker with,16.676,15.41894929,3,3,serves,NA,serves,bickers,with,bickers with,bailiff __________ civil engineer
+bailiff,civil engineer,serve,yell at,18.5643,17.05578673,4,4,serves,NA,serves,yells,at,yells at,bailiff __________ civil engineer
+bailiff,cook,ask about,laugh at,8.4777,7.846729212,5,4,asks,about,asks about,laughs,at,laughes at,bailiff __________ cook
+bailiff,cook,ask about,provoke,14.0505,12.92097427,6,3,asks,about,asks about,provokes,NA,provokes,bailiff __________ cook
+bailiff,crane operator,show something to,gawk at,7.5918,7.810080404,7,2,shows,something to,shows something to,gawks,at,gawks at,bailiff __________ crane operator
+bailiff,crane operator,show something to,blabber to,10.4714,11.58780321,8,1,shows,something to,shows something to,blabbers,to,blabbers to,bailiff __________ crane operator
+bailiff,defense attorney,sit next to,exclude,13.2821,13.8363133,9,1,sits,next to,sits next to,excludes,NA,excludes,bailiff __________ defense attorney
+bailiff,defense attorney,sit next to,terrorize,27.2932,27.02550971,10,2,sits,next to,sits next to,terrorizes,NA,terrorizes,bailiff __________ defense attorney
+bailiff,dental hygienist,identify,sneer at,13.1002,13.14119943,11,3,identifies,NA,identifies,sneers,at,sneers at,bailiff __________ dental hygienist
+bailiff,dental hygienist,identify,terrorize,26.459,27.22511695,12,4,identifies,NA,identifies,terrorizes,NA,terrorizes,bailiff __________ dental hygienist
+bailiff,dentist,serve,apprehend,6.4458,5.447779149,13,4,serves,NA,serves,apprehends,NA,apprehends,bailiff __________ dentist
+bailiff,dentist,serve,debase,10.6658,9.750242827,14,3,serves,NA,serves,debases,NA,debases,bailiff __________ dentist
+bailiff,firefighter,ask about,baby,10.6817,10.81172325,15,2,asks,about,asks about,babies,NA,babies,bailiff __________ firefighter
+bailiff,firefighter,ask about,dominate,14.2685,14.49951459,16,1,asks,about,asks about,dominates,NA,dominates,bailiff __________ firefighter
+bailiff,foreman,show something to,criticize,6.2494,6.594052051,3,1,shows,something to,shows something to,criticizes,NA,criticizes,bailiff __________ foreman
+bailiff,foreman,show something to,confine,10.8029,10.20334261,4,2,shows,something to,shows something to,confines,NA,confines,bailiff __________ foreman
+bailiff,musician,identify,assist,5.0942,5.236381223,5,3,identifies,NA,identifies,assists,NA,assists,bailiff __________ musician
+bailiff,musician,identify,defame,10.5758,11.21847941,6,4,identifies,NA,identifies,defames,NA,defames,bailiff __________ musician
+bailiff,nurse,ask about,flee,5.9329,5.376782697,7,4,asks,about,asks about,flees,NA,flees,bailiff __________ nurse
+bailiff,nurse,ask about,liberate,6.311,6.309206541,8,3,asks,about,asks about,liberates,NA,liberates,bailiff __________ nurse
+bailiff,nutritionist,escort,chide,6.4025,6.134039471,9,2,escorts,NA,escorts,chides,NA,chides,bailiff __________ nutritionist
+bailiff,nutritionist,escort,imitate,8.2677,7.794830696,10,1,escorts,NA,escorts,imitates,NA,imitates,bailiff __________ nutritionist
+bailiff,pediatrician,ask about,argue with,14.9378,14.52535814,11,1,asks,about,asks about,argues,with,argues with,bailiff __________ pediatrician
+bailiff,pediatrician,ask about,conspire against,14.7085,15.2041378,12,2,asks,about,asks about,conspires,against,conspires against,bailiff __________ pediatrician
+bailiff,surgeon,ask about,alert,5.4549,5.56005123,13,3,asks,about,asks about,alerts,NA,alerts,bailiff __________ surgeon
+bailiff,surgeon,ask about,doubt,7.1101,7.570522899,14,4,asks,about,asks about,doubts,NA,doubts,bailiff __________ surgeon
+bailiff,teacher,ask about,flee,5.9329,5.388601829,15,4,asks,about,asks about,flees,NA,flees,bailiff __________ teacher
+bailiff,teacher,ask about,torment,24.3041,24.03767022,16,3,asks,about,asks about,torments,NA,torments,bailiff __________ teacher
+bailiff,technician,show something to,hunt for,6.2694,7.246853396,1,2,shows,something to,shows something to,hunts,for,hunts for,bailiff __________ technician
+bailiff,technician,show something to,distrust,6.9065,7.800126282,2,1,shows,something to,shows something to,distrusts,NA,distrusts,bailiff __________ technician
+civil engineer,bailiff,serve,mother,6.0705,5.187064799,5,1,serves,NA,serves,mothers,NA,mothers,civil engineer __________ bailiff
+civil engineer,bailiff,serve,debase,10.6658,12.03866565,6,2,serves,NA,serves,debases,NA,debases,civil engineer __________ bailiff
+civil engineer,civil engineer,turn to,hassle,5.1626,22.98106866,7,3,turns,to,turns to,hassles,NA,hassles,civil engineer __________ civil engineer
+civil engineer,civil engineer,turn to,shaft,21.2726,21.13197425,8,4,turns,to,turns to,shafts,NA,shafts,civil engineer __________ civil engineer
+civil engineer,cook,turn to,brush off,12.1313,12.26380995,9,4,turns,to,turns to,brushs,off,brushes off,civil engineer __________ cook
+civil engineer,cook,turn to,distress,17.6157,17.44541375,10,3,turns,to,turns to,distresss,NA,distresses,civil engineer __________ cook
+civil engineer,crane operator,turn to,demote,10.9394,9.875514581,11,2,turns,to,turns to,demotes,NA,demotes,civil engineer __________ crane operator
+civil engineer,crane operator,turn to,upstage,14.2457,13.92272381,12,1,turns,to,turns to,upstages,NA,upstages,civil engineer __________ crane operator
+civil engineer,defense attorney,serve,defend,9.2378,9.385124065,13,1,serves,NA,serves,defends,NA,defends,civil engineer __________ defense attorney
+civil engineer,defense attorney,serve,grab,11.1445,13.12748273,14,2,serves,NA,serves,grabs,NA,grabs,civil engineer __________ defense attorney
+civil engineer,dental hygienist,turn to,baits,16.5205,NEED TO FIX,15,3,turns,to,turns to,baitss,NA,baits,civil engineer __________ dental hygienist
+civil engineer,dental hygienist,turn to,bicker with,20.0416,19.56549137,16,4,turns,to,turns to,bickers,with,bickers with,civil engineer __________ dental hygienist
+civil engineer,dentist,turn to,amaze,6.1314,6.691199049,1,4,turns,to,turns to,amazes,NA,amazes,civil engineer __________ dentist
+civil engineer,dentist,turn to,misunderstand,14.7659,14.1717791,2,3,turns,to,turns to,misunderstands,NA,misunderstands,civil engineer __________ dentist
+civil engineer,firefighter,answer,sentence,6.9826,8.797181744,3,2,answers,NA,answers,sentences,NA,sentences,civil engineer __________ firefighter
+civil engineer,firefighter,answer,unnerve,10.3691,11.82469327,4,1,answers,NA,answers,unnerves,NA,unnerves,civil engineer __________ firefighter
+civil engineer,foreman,excuse,stare at,6.3017,7.351055225,7,1,excuses,NA,excuses,stares,at,stares at,civil engineer __________ foreman
+civil engineer,foreman,excuse,criticize,8.6186,10.0485873,8,2,excuses,NA,excuses,criticizes,NA,criticizes,civil engineer __________ foreman
+civil engineer,musician,turn to,overcharge,22.3664,21.79906022,9,3,turns,to,turns to,overcharges,NA,overcharges,civil engineer __________ musician
+civil engineer,musician,turn to,cheat,28.021,27.3995228,10,4,turns,to,turns to,cheats,NA,cheats,civil engineer __________ musician
+civil engineer,nurse,consult,have a heart to heart talk with,5.0438,5.260037528,11,4,consults,NA,consults,haves,a heart to heart talk with,has a heart to heart talk with,civil engineer __________ nurse
+civil engineer,nurse,consult,expel,17.4029,18.77949346,12,3,consults,NA,consults,expels,NA,expels,civil engineer __________ nurse
+civil engineer,nutritionist,consult,cheer,9.0522,9.075507138,13,2,consults,NA,consults,cheers,NA,cheers,civil engineer __________ nutritionist
+civil engineer,nutritionist,consult,impede,11.9756,12.88593222,14,1,consults,NA,consults,impedes,NA,impedes,civil engineer __________ nutritionist
+civil engineer,pediatrician,answer,avoid,13.6838,13.66757977,15,1,answers,NA,answers,avoids,NA,avoids,civil engineer __________ pediatrician
+civil engineer,pediatrician,answer,fool,15.3011,16.34962561,16,2,answers,NA,answers,fools,NA,fools,civil engineer __________ pediatrician
+civil engineer,surgeon,ask about,baby,10.6817,13.32170261,1,3,asks,about,asks about,babies,NA,babies,civil engineer __________ surgeon
+civil engineer,surgeon,ask about,cut the pay of,16.5045,21.27591577,2,4,asks,about,asks about,cuts,the pay of,cuts the pay of,civil engineer __________ surgeon
+civil engineer,teacher,turn to,interfere with,12.1829,12.32218562,3,4,turns,to,turns to,interferes,with,interferes with,civil engineer __________ teacher
+civil engineer,teacher,turn to,upstage,14.2457,14.22058592,4,3,turns,to,turns to,upstages,NA,upstages,civil engineer __________ teacher
+civil engineer,technician,turn to,gossip with,13.3574,12.94959715,5,2,turns,to,turns to,gossips,with,gossips with,civil engineer __________ technician
+civil engineer,technician,turn to,seize,18.811,18.32135834,6,1,turns,to,turns to,seizes,NA,seizes,civil engineer __________ technician
+cook,bailiff,chat with,soothe,7.7049,7.478459017,9,1,chats,with,chats with,soothes,NA,soothes,cook __________ bailiff
+cook,bailiff,chat with,chide,10.2654,8.234963994,10,2,chats,with,chats with,chides,NA,chides,cook __________ bailiff
+cook,civil engineer,chat with,flee,8.0973,8.013997666,11,3,chats,with,chats with,flees,NA,flees,cook __________ civil engineer
+cook,civil engineer,chat with,glare at,17.309,18.4149062,12,4,chats,with,chats with,glares,at,glares at,cook __________ civil engineer
+cook,cook,toast,flee,8.243,8.303812091,13,4,toasts,NA,toasts,flees,NA,flees,cook __________ cook
+cook,cook,toast,intimidate,14.9253,16.35032678,14,3,toasts,NA,toasts,intimidates,NA,intimidates,cook __________ cook
+cook,crane operator,chat with,scare,5.0513,12.25505326,15,2,chats,with,chats with,scares,NA,scares,cook __________ crane operator
+cook,crane operator,chat with,overlook,20.6819,18.88150827,16,1,chats,with,chats with,overlooks,NA,overlooks,cook __________ crane operator
+cook,defense attorney,chat with,restrain,11.5017,10.59635441,1,1,chats,with,chats with,restrains,NA,restrains,cook __________ defense attorney
+cook,defense attorney,chat with,scowl at,18.4202,15.74150598,2,2,chats,with,chats with,scowls,at,scowls at,cook __________ defense attorney
+cook,dental hygienist,chat with,quiet,8.2866,8.782066653,3,3,chats,with,chats with,quiets,NA,quiets,cook __________ dental hygienist
+cook,dental hygienist,chat with,confuse,13.0954,13.42769443,4,4,chats,with,chats with,confuses,NA,confuses,cook __________ dental hygienist
+cook,dentist,chat with,fluster,6.291,6.515208615,5,4,chats,with,chats with,flusters,NA,flusters,cook __________ dentist
+cook,dentist,chat with,borrow money from,14.1569,14.47609296,6,3,chats,with,chats with,borrows,money from,borrows money from,cook __________ dentist
+cook,firefighter,joke with,bind,17.4021,17.43159756,7,2,jokes,with,jokes with,binds,NA,binds,cook __________ firefighter
+cook,firefighter,joke with,seize,18.6056,19.00180343,8,1,jokes,with,jokes with,seizes,NA,seizes,cook __________ firefighter
+cook,foreman,chat with,bill,7.6094,5.656534074,11,1,chats,with,chats with,bills,NA,bills,cook __________ foreman
+cook,foreman,chat with,educate,6.4329,7.280467479,12,2,chats,with,chats with,educates,NA,educates,cook __________ foreman
+cook,musician,chat with,curtsey to,5.0657,6.153802705,13,3,chats,with,chats with,curtseies,to,curtsies to,cook __________ musician
+cook,musician,chat with,abet,6.639,7.283395049,14,4,chats,with,chats with,abets,NA,abets,cook __________ musician
+cook,nurse,joke with,misjudge,23.0626,21.26831598,15,4,jokes,with,jokes with,misjudges,NA,misjudges,cook __________ nurse
+cook,nurse,joke with,haunt,32.1101,30.40335414,16,3,jokes,with,jokes with,haunts,NA,haunts,cook __________ nurse
+cook,nutritionist,toast,disillusion,15.5209,16.57443592,1,2,toasts,NA,toasts,disillusions,NA,disillusions,cook __________ nutritionist
+cook,nutritionist,toast,jeer,20.0331,20.50859963,2,1,toasts,NA,toasts,jeers,NA,jeers,cook __________ nutritionist
+cook,pediatrician,joke with,bewilder,8.8603,8.153907556,3,1,jokes,with,jokes with,bewilders,NA,bewilders,cook __________ pediatrician
+cook,pediatrician,joke with,disobey,15.491,14.93799657,4,2,jokes,with,jokes with,disobeies,NA,disobeys,cook __________ pediatrician
+cook,surgeon,joke with,hypnotize,13.4342,14.24970374,5,3,jokes,with,jokes with,hypnotizes,NA,hypnotizes,cook __________ surgeon
+cook,surgeon,joke with,forget,24.6678,23.88666649,6,4,jokes,with,jokes with,forgets,NA,forgets,cook __________ surgeon
+cook,teacher,joke with,horrify,5.3656,21.60010995,7,4,jokes,with,jokes with,horrifies,NA,horrifies,cook __________ teacher
+cook,teacher,joke with,ensnare,17.5362,16.88871604,8,3,jokes,with,jokes with,ensnares,NA,ensnares,cook __________ teacher
+cook,technician,chat with,provoke,16.3909,16.0096204,9,2,chats,with,chats with,provokes,NA,provokes,cook __________ technician
+cook,technician,chat with,disregard,20.7704,21.49428798,10,1,chats,with,chats with,disregards,NA,disregards,cook __________ technician
+crane operator,bailiff,sit next to,jeer,15.5822,14.9829231,13,1,sits,next to,sits next to,jeers,NA,jeers,crane operator __________ bailiff
+crane operator,bailiff,sit next to,mortify,17.5409,17.26498699,14,2,sits,next to,sits next to,mortifies,NA,mortifies,crane operator __________ bailiff
+crane operator,civil engineer,ask about,refuse,6.7046,6.026107217,15,3,asks,about,asks about,refuses,NA,refuses,crane operator __________ civil engineer
+crane operator,civil engineer,ask about,sentence,6.9981,7.245895953,16,4,asks,about,asks about,sentences,NA,sentences,crane operator __________ civil engineer
+crane operator,cook,ask about,deny,6.6113,6.350260368,1,4,asks,about,asks about,denies,NA,denies,crane operator __________ cook
+crane operator,cook,ask about,accost,10.5576,9.463419721,2,3,asks,about,asks about,accosts,NA,accosts,crane operator __________ cook
+crane operator,crane operator,show something to,misunderstand,9.2357,9.244149208,3,2,shows,something to,shows something to,misunderstands,NA,misunderstands,crane operator __________ crane operator
+crane operator,crane operator,show something to,mumble to,15.4181,14.49523248,4,1,shows,something to,shows something to,mumbles,to,mumbles to,crane operator __________ crane operator
+crane operator,defense attorney,sit next to,bawl out,8.6602,8.139524823,5,1,sits,next to,sits next to,bawls,out,bawls out,crane operator __________ defense attorney
+crane operator,defense attorney,sit next to,defend,11.9841,10.52519722,6,2,sits,next to,sits next to,defends,NA,defends,crane operator __________ defense attorney
+crane operator,dental hygienist,ask about,frighten,13.294,11.64230199,7,3,asks,about,asks about,frightens,NA,frightens,crane operator __________ dental hygienist
+crane operator,dental hygienist,ask about,denigrate,14.1514,12.24687546,8,4,asks,about,asks about,denigrates,NA,denigrates,crane operator __________ dental hygienist
+crane operator,dentist,ask about,blame,15.9019,13.80912008,9,4,asks,about,asks about,blames,NA,blames,crane operator __________ dentist
+crane operator,dentist,ask about,hate,19.2774,17.62096178,10,3,asks,about,asks about,hates,NA,hates,crane operator __________ dentist
+crane operator,firefighter,ask about,follow,6.4998,7.090429934,11,2,asks,about,asks about,follows,NA,follows,crane operator __________ firefighter
+crane operator,firefighter,ask about,badger,16.9713,14.93684387,12,1,asks,about,asks about,badgers,NA,badgers,crane operator __________ firefighter
+crane operator,foreman,show something to,distract,5.7362,6.215583555,15,1,shows,something to,shows something to,distracts,NA,distracts,crane operator __________ foreman
+crane operator,foreman,show something to,shock,6.587,7.358120635,16,2,shows,something to,shows something to,shocks,NA,shocks,crane operator __________ foreman
+crane operator,musician,ask about,misjudge,15.0329,13.17751758,1,3,asks,about,asks about,misjudges,NA,misjudges,crane operator __________ musician
+crane operator,musician,ask about,walk out on,16.2674,14.50845923,2,4,asks,about,asks about,walks,out on,walks out on,crane operator __________ musician
+crane operator,nurse,ask about,sneer at,15.0314,14.12231859,3,4,asks,about,asks about,sneers,at,sneers at,crane operator __________ nurse
+crane operator,nurse,ask about,mouth off to,17.6058,15.76813064,4,3,asks,about,asks about,mouths,off to,mouthes off to,crane operator __________ nurse
+crane operator,nutritionist,ask about,upstage,11.741,10.42066272,5,2,asks,about,asks about,upstages,NA,upstages,crane operator __________ nutritionist
+crane operator,nutritionist,ask about,hinder,13.5202,12.5490856,6,1,asks,about,asks about,hinders,NA,hinders,crane operator __________ nutritionist
+crane operator,pediatrician,ask about,loathe,16.1317,16.00552026,7,1,asks,about,asks about,loathes,NA,loathes,crane operator __________ pediatrician
+crane operator,pediatrician,ask about,hate,19.2774,19.82574532,8,2,asks,about,asks about,hates,NA,hates,crane operator __________ pediatrician
+crane operator,surgeon,ask about,hurry,8.2612,7.158647653,9,3,asks,about,asks about,hurries,NA,hurries,crane operator __________ surgeon
+crane operator,surgeon,ask about,abandon,25.2363,25.76068167,10,4,asks,about,asks about,abandons,NA,abandons,crane operator __________ surgeon
+crane operator,teacher,ask about,fool,13.4342,12.97356882,11,4,asks,about,asks about,fools,NA,fools,crane operator __________ teacher
+crane operator,teacher,ask about,undermine,16.2046,15.58989054,12,3,asks,about,asks about,undermines,NA,undermines,crane operator __________ teacher
+crane operator,technician,ask about,understand,6.4538,7.627485862,13,2,asks,about,asks about,understands,NA,understands,crane operator __________ technician
+crane operator,technician,ask about,dismiss,11.0702,9.599286412,14,1,asks,about,asks about,dismisss,NA,dismisses,crane operator __________ technician
+defense attorney,bailiff,bargain with,harangue,6.9419,6.853269358,2,1,bargains,with,bargains with,harangues,NA,harangues,defense attorney __________ bailiff
+defense attorney,bailiff,bargain with,submit to,15.4643,15.27948444,3,2,bargains,with,bargains with,submits,to,submits to,defense attorney __________ bailiff
+defense attorney,civil engineer,call,hypnotize,6.33,6.641987476,4,3,calls,NA,calls,hypnotizes,NA,hypnotizes,defense attorney __________ civil engineer
+defense attorney,civil engineer,call,sicken,18.9153,19.16743918,5,4,calls,NA,calls,sickens,NA,sickens,defense attorney __________ civil engineer
+defense attorney,cook,acclaim,stymie,6.563,6.952465298,6,4,acclaims,NA,acclaims,stymies,NA,stymies,defense attorney __________ cook
+defense attorney,cook,acclaim,seize,12.8429,13.38808945,7,3,acclaims,NA,acclaims,seizes,NA,seizes,defense attorney __________ cook
+defense attorney,crane operator,bargain with,delay payment to,5.0211,20.19119069,8,2,bargains,with,bargains with,delaies,payment to,delays payment to,defense attorney __________ crane operator
+defense attorney,crane operator,bargain with,mimic,7.103,7.681137335,9,1,bargains,with,bargains with,mimics,NA,mimics,defense attorney __________ crane operator
+defense attorney,defense attorney,bargain with,bug,10.3616,10.27944352,10,1,bargains,with,bargains with,bugs,NA,bugs,defense attorney __________ defense attorney
+defense attorney,defense attorney,bargain with,scoff at,11.553,11.46318854,11,2,bargains,with,bargains with,scoffs,at,scoffs at,defense attorney __________ defense attorney
+defense attorney,dental hygienist,acclaim,obey,6.4262,6.364833336,12,3,acclaims,NA,acclaims,obeies,NA,obeys,defense attorney __________ dental hygienist
+defense attorney,dental hygienist,acclaim,frustrate,11.7645,11.17184292,13,4,acclaims,NA,acclaims,frustrates,NA,frustrates,defense attorney __________ dental hygienist
+defense attorney,dentist,call,forgive,9.1379,9.334024877,14,4,calls,NA,calls,forgives,NA,forgives,defense attorney __________ dentist
+defense attorney,dentist,call,confine,14.7483,14.7632718,15,3,calls,NA,calls,confines,NA,confines,defense attorney __________ dentist
+defense attorney,firefighter,toast,hide,12.2126,10.97399978,16,2,toasts,NA,toasts,hides,NA,hides,defense attorney __________ firefighter
+defense attorney,firefighter,toast,insult,23.8138,20.25814784,1,1,toasts,NA,toasts,insults,NA,insults,defense attorney __________ firefighter
+defense attorney,foreman,bargain with,accept,5.1251,5.014384987,4,1,bargains,with,bargains with,accepts,NA,accepts,defense attorney __________ foreman
+defense attorney,foreman,bargain with,dismiss,8.289,7.857941116,5,2,bargains,with,bargains with,dismisss,NA,dismisses,defense attorney __________ foreman
+defense attorney,musician,acclaim,monitor,7.4561,7.121339128,6,3,acclaims,NA,acclaims,monitors,NA,monitors,defense attorney __________ musician
+defense attorney,musician,acclaim,haze,19.1394,18.57275666,7,4,acclaims,NA,acclaims,hazes,NA,hazes,defense attorney __________ musician
+defense attorney,nurse,acclaim,coerce,7.0443,8.428086884,8,4,acclaims,NA,acclaims,coerces,NA,coerces,defense attorney __________ nurse
+defense attorney,nurse,acclaim,upset,16.3721,17.87299486,9,3,acclaims,NA,acclaims,upsets,NA,upsets,defense attorney __________ nurse
+defense attorney,nutritionist,acclaim,plot against,20.0574,21.02918034,10,2,acclaims,NA,acclaims,plots,against,plots against,defense attorney __________ nutritionist
+defense attorney,nutritionist,acclaim,betray,24.9206,25.72524556,11,1,acclaims,NA,acclaims,betraies,NA,betrays,defense attorney __________ nutritionist
+defense attorney,pediatrician,toast,disconcert,14.8793,12.24080279,12,1,toasts,NA,toasts,disconcerts,NA,disconcerts,defense attorney __________ pediatrician
+defense attorney,pediatrician,toast,corrupt,28.2008,26.345842,13,2,toasts,NA,toasts,corrupts,NA,corrupts,defense attorney __________ pediatrician
+defense attorney,surgeon,chat with,hurry,8.1956,5.385374592,14,3,chats,with,chats with,hurries,NA,hurries,defense attorney __________ surgeon
+defense attorney,surgeon,chat with,prod,10.0714,7.793757503,15,4,chats,with,chats with,prods,NA,prods,defense attorney __________ surgeon
+defense attorney,teacher,call,hold,8.3809,9.642892847,16,4,calls,NA,calls,holds,NA,holds,defense attorney __________ teacher
+defense attorney,teacher,call,torment,22.9214,25.6081566,1,3,calls,NA,calls,torments,NA,torments,defense attorney __________ teacher
+defense attorney,technician,acclaim,upset,16.3721,15.66465646,2,2,acclaims,NA,acclaims,upsets,NA,upsets,defense attorney __________ technician
+defense attorney,technician,acclaim,endanger,22.5097,21.7040404,3,1,acclaims,NA,acclaims,endangers,NA,endangers,defense attorney __________ technician
+dental hygienist,bailiff,serve,hush,5.1365,5.411378136,6,1,serves,NA,serves,hushs,NA,hushes,dental hygienist __________ bailiff
+dental hygienist,bailiff,serve,defame,12.6153,12.99268348,7,2,serves,NA,serves,defames,NA,defames,dental hygienist __________ bailiff
+dental hygienist,civil engineer,ask about,harangue,10.3035,10.59009846,8,3,asks,about,asks about,harangues,NA,harangues,dental hygienist __________ civil engineer
+dental hygienist,civil engineer,ask about,hound,12.8166,12.91173951,9,4,asks,about,asks about,hounds,NA,hounds,dental hygienist __________ civil engineer
+dental hygienist,cook,ask about,obstruct,11.6349,12.78864718,10,4,asks,about,asks about,obstructs,NA,obstructs,dental hygienist __________ cook
+dental hygienist,cook,ask about,abandon,25.2363,26.60466719,11,3,asks,about,asks about,abandons,NA,abandons,dental hygienist __________ cook
+dental hygienist,crane operator,serve,care for,8.5673,9.424746535,12,2,serves,NA,serves,cares,for,cares for,dental hygienist __________ crane operator
+dental hygienist,crane operator,serve,deprive,15.2794,16.75497436,13,1,serves,NA,serves,deprives,NA,deprives,dental hygienist __________ crane operator
+dental hygienist,defense attorney,serve,implicate,5.7029,6.088806907,14,1,serves,NA,serves,implicates,NA,implicates,dental hygienist __________ defense attorney
+dental hygienist,defense attorney,serve,restrain,10.9794,12.02463467,15,2,serves,NA,serves,restrains,NA,restrains,dental hygienist __________ defense attorney
+dental hygienist,dental hygienist,ask about,subdue,6.6897,7.44567718,16,3,asks,about,asks about,subdues,NA,subdues,dental hygienist __________ dental hygienist
+dental hygienist,dental hygienist,ask about,deflate,15.3194,16.24867159,1,4,asks,about,asks about,deflates,NA,deflates,dental hygienist __________ dental hygienist
+dental hygienist,dentist,ask about,support,5.2338,6.329118033,2,4,asks,about,asks about,supports,NA,supports,dental hygienist __________ dentist
+dental hygienist,dentist,ask about,bait,12.1869,13.52831621,3,3,asks,about,asks about,baits,NA,baits,dental hygienist __________ dentist
+dental hygienist,firefighter,ask about,holler at,11.0889,9.047213232,4,2,asks,about,asks about,hollers,at,hollers at,dental hygienist __________ firefighter
+dental hygienist,firefighter,ask about,misinform,16.0484,17.54007278,5,1,asks,about,asks about,misinforms,NA,misinforms,dental hygienist __________ firefighter
+dental hygienist,foreman,serve,misunderstand,10.9675,10.4294712,8,1,serves,NA,serves,misunderstands,NA,misunderstands,dental hygienist __________ foreman
+dental hygienist,foreman,serve,heckle,16.6265,16.23627432,9,2,serves,NA,serves,heckles,NA,heckles,dental hygienist __________ foreman
+dental hygienist,musician,ask about,bawl out,10.2586,10.26626046,10,3,asks,about,asks about,bawls,out,bawls out,dental hygienist __________ musician
+dental hygienist,musician,ask about,overwhelm,10.5505,11.21820939,11,4,asks,about,asks about,overwhelms,NA,overwhelms,dental hygienist __________ musician
+dental hygienist,nurse,ask about,give in to,12.3386,12.01605336,12,4,asks,about,asks about,gives,in to,gives in to,dental hygienist __________ nurse
+dental hygienist,nurse,ask about,infuriate,17.8925,18.57318143,13,3,asks,about,asks about,infuriates,NA,infuriates,dental hygienist __________ nurse
+dental hygienist,nutritionist,ask about,hush,5.6146,6.232986709,14,2,asks,about,asks about,hushs,NA,hushes,dental hygienist __________ nutritionist
+dental hygienist,nutritionist,ask about,abuse,32.091,32.89084442,15,1,asks,about,asks about,abuses,NA,abuses,dental hygienist __________ nutritionist
+dental hygienist,pediatrician,ask about,kowtow to,11.3454,9.985580839,16,1,asks,about,asks about,kowtows,to,kowtows to,dental hygienist __________ pediatrician
+dental hygienist,pediatrician,ask about,pester,17.4041,17.05580615,1,2,asks,about,asks about,pesters,NA,pesters,dental hygienist __________ pediatrician
+dental hygienist,surgeon,ask about,scoff at,14.5606,15.22891634,2,3,asks,about,asks about,scoffs,at,scoffs at,dental hygienist __________ surgeon
+dental hygienist,surgeon,ask about,corner,12.5622,15.54290055,3,4,asks,about,asks about,corners,NA,corners,dental hygienist __________ surgeon
+dental hygienist,teacher,ask about,reproach,5.6763,6.290941227,4,4,asks,about,asks about,reproachs,NA,reproaches,dental hygienist __________ teacher
+dental hygienist,teacher,ask about,berate,17.4906,18.38821803,5,3,asks,about,asks about,berates,NA,berates,dental hygienist __________ teacher
+dental hygienist,technician,ask about,mother,5.2642,6.223280264,6,2,asks,about,asks about,mothers,NA,mothers,dental hygienist __________ technician
+dental hygienist,technician,ask about,walk out on,16.2674,17.32201346,7,1,asks,about,asks about,walks,out on,walks out on,dental hygienist __________ technician
+dentist,bailiff,serve,assist,5.5629,5.073154382,10,1,serves,NA,serves,assists,NA,assists,dentist __________ bailiff
+dentist,bailiff,serve,apprehend,6.4458,7.117607635,11,2,serves,NA,serves,apprehends,NA,apprehends,dentist __________ bailiff
+dentist,civil engineer,turn to,subdue,8.2766,7.99882431,12,3,turns,to,turns to,subdues,NA,subdues,dentist __________ civil engineer
+dentist,civil engineer,turn to,threaten,29.3531,28.60346652,13,4,turns,to,turns to,threatens,NA,threatens,dentist __________ civil engineer
+dentist,cook,consult,bait,13.3429,14.1032205,14,4,consults,NA,consults,baits,NA,baits,dentist __________ cook
+dentist,cook,consult,upset,19.1529,20.13012011,15,3,consults,NA,consults,upsets,NA,upsets,dentist __________ cook
+dentist,crane operator,serve,baby,9.3066,10.60883592,16,2,serves,NA,serves,babies,NA,babies,dentist __________ crane operator
+dentist,crane operator,serve,fail,16.5576,18.23367079,1,1,serves,NA,serves,fails,NA,fails,dentist __________ crane operator
+dentist,defense attorney,serve,corner,12.3569,13.70619107,2,1,serves,NA,serves,corners,NA,corners,dentist __________ defense attorney
+dentist,defense attorney,serve,double cross,20.5208,22.1784934,3,2,serves,NA,serves,doubles,cross,double crosses,dentist __________ defense attorney
+dentist,dental hygienist,consult,reproach,6.6621,6.850153236,4,3,consults,NA,consults,reproachs,NA,reproaches,dentist __________ dental hygienist
+dentist,dental hygienist,consult,hound,14.3956,14.82320868,5,4,consults,NA,consults,hounds,NA,hounds,dentist __________ dental hygienist
+dentist,dentist,turn to,admonish,6.0477,5.445131482,6,4,turns,to,turns to,admonishs,NA,admonishes,dentist __________ dentist
+dentist,dentist,turn to,swindle,22.4408,21.42798248,7,3,turns,to,turns to,swindles,NA,swindles,dentist __________ dentist
+dentist,firefighter,answer,understand,5.2019,5.981795059,8,2,answers,NA,answers,understands,NA,understands,dentist __________ firefighter
+dentist,firefighter,answer,tell off,11.181,12.07648369,9,1,answers,NA,answers,tells,off,tells off,dentist __________ firefighter
+dentist,foreman,excuse,rebuff,5.3986,6.097478306,12,1,excuses,NA,excuses,rebuffs,NA,rebuffs,dentist __________ foreman
+dentist,foreman,excuse,cave in to,12.5748,13.26205397,13,2,excuses,NA,excuses,caves,in to,caves in to,dentist __________ foreman
+dentist,musician,consult,tantalize,7.7664,8.006259357,14,3,consults,NA,consults,tantalizes,NA,tantalizes,dentist __________ musician
+dentist,musician,consult,sicken,20.639,20.9125783,15,4,consults,NA,consults,sickens,NA,sickens,dentist __________ musician
+dentist,nurse,answer,anger,18.1877,19.0169665,16,4,answers,NA,answers,angers,NA,angers,dentist __________ nurse
+dentist,nurse,answer,fear,24.9993,24.41799708,1,3,answers,NA,answers,fears,NA,fears,dentist __________ nurse
+dentist,nutritionist,consult,provoke,15.1073,15.62172516,2,2,consults,NA,consults,provokes,NA,provokes,dentist __________ nutritionist
+dentist,nutritionist,consult,jeer,19.845,20.25450653,3,1,consults,NA,consults,jeers,NA,jeers,dentist __________ nutritionist
+dentist,pediatrician,answer,dupe,18.1229,19.2546948,4,1,answers,NA,answers,dupes,NA,dupes,dentist __________ pediatrician
+dentist,pediatrician,answer,offend,18.1949,19.40940351,5,2,answers,NA,answers,offends,NA,offends,dentist __________ pediatrician
+dentist,surgeon,ask about,forgive,6.7364,7.087877699,6,3,asks,about,asks about,forgives,NA,forgives,dentist __________ surgeon
+dentist,surgeon,ask about,anger,17.2818,20.48721105,7,4,asks,about,asks about,angers,NA,angers,dentist __________ surgeon
+dentist,teacher,ask about,despise,14.2689,17.02403855,8,4,asks,about,asks about,despises,NA,despises,dentist __________ teacher
+dentist,teacher,ask about,insult,20.4689,23.34090424,9,3,asks,about,asks about,insults,NA,insults,dentist __________ teacher
+dentist,technician,turn to,stammer at,12.5275,11.60109443,10,2,turns,to,turns to,stammers,at,stammers at,dentist __________ technician
+dentist,technician,turn to,overwhelm,12.7078,11.80562048,11,1,turns,to,turns to,overwhelms,NA,overwhelms,dentist __________ technician
+firefighter,bailiff,greet,extort,24.411,25.65248594,14,1,greets,NA,greets,extorts,NA,extorts,firefighter __________ bailiff
+firefighter,bailiff,greet,antagonize,28.2862,29.87915004,15,2,greets,NA,greets,antagonizes,NA,antagonizes,firefighter __________ bailiff
+firefighter,civil engineer,congratulate,retaliate against,18.1674,17.6596677,16,3,congratulates,NA,congratulates,retaliates,against,retaliates against,firefighter __________ civil engineer
+firefighter,civil engineer,congratulate,kowtow to,27.1987,26.99029408,1,4,congratulates,NA,congratulates,kowtows,to,kowtows to,firefighter __________ civil engineer
+firefighter,cook,amuse,analyze,10.6174,13.58675211,2,4,amuses,NA,amuses,analyzes,NA,analyzes,firefighter __________ cook
+firefighter,cook,amuse,annoy,22.1672,25.64076961,3,3,amuses,NA,amuses,annoies,NA,annoys,firefighter __________ cook
+firefighter,crane operator,coach,examine,9.5386,10.34154946,4,2,coachs,NA,coachs,examines,NA,examines,firefighter __________ crane operator
+firefighter,crane operator,coach,deprave,27.8713,29.41675263,5,1,coachs,NA,coachs,depraves,NA,depraves,firefighter __________ crane operator
+firefighter,defense attorney,greet,hail,5.772,6.6207213,6,1,greets,NA,greets,hails,NA,hails,firefighter __________ defense attorney
+firefighter,defense attorney,greet,patronize,19.4573,20.99297856,7,2,greets,NA,greets,patronizes,NA,patronizes,firefighter __________ defense attorney
+firefighter,dental hygienist,congratulate,comfort,8.8809,10.58880837,8,3,congratulates,NA,congratulates,comforts,NA,comforts,firefighter __________ dental hygienist
+firefighter,dental hygienist,congratulate,dismay,28.4649,28.83311074,9,4,congratulates,NA,congratulates,dismaies,NA,dismays,firefighter __________ dental hygienist
+firefighter,dentist,congratulate,reform,7.3667,7.818412581,10,4,congratulates,NA,congratulates,reforms,NA,reforms,firefighter __________ dentist
+firefighter,dentist,congratulate,ridicule,39.3389,38.53453837,11,3,congratulates,NA,congratulates,ridicules,NA,ridicules,firefighter __________ dentist
+firefighter,firefighter,excite,stammer at,23.141,25.55607165,12,2,excites,NA,excites,stammers,at,stammers at,firefighter __________ firefighter
+firefighter,firefighter,excite,delude,26.5946,30.45668571,13,1,excites,NA,excites,deludes,NA,deludes,firefighter __________ firefighter
+firefighter,foreman,coach,walk out on,24.7598,24.45669064,16,1,coachs,NA,coachs,walks,out on,walks out on,firefighter __________ foreman
+firefighter,foreman,coach,plot against,31.0122,30.27061973,1,2,coachs,NA,coachs,plots,against,plots against,firefighter __________ foreman
+firefighter,musician,congratulate,pooh pooh,24.6197,25.07063352,2,3,congratulates,NA,congratulates,poohs,pooh,poohes pooh,firefighter __________ musician
+firefighter,musician,congratulate,bother,28.8875,28.16571222,3,4,congratulates,NA,congratulates,bothers,NA,bothers,firefighter __________ musician
+firefighter,nurse,applaud,confuse,27.4078,24.1404042,4,4,applauds,NA,applauds,confuses,NA,confuses,firefighter __________ nurse
+firefighter,nurse,applaud,frame,50.1787,46.15145682,5,3,applauds,NA,applauds,frames,NA,frames,firefighter __________ nurse
+firefighter,nutritionist,applaud,be sarcastic toward,19.2554,16.235055,6,2,applauds,NA,applauds,bes,sarcastic toward,issarcastic toward,firefighter __________ nutritionist
+firefighter,nutritionist,applaud,bribe,27.6986,23.79585408,7,1,applauds,NA,applauds,bribes,NA,bribes,firefighter __________ nutritionist
+firefighter,pediatrician,applaud,hunt for,26.7707,24.41077356,8,1,applauds,NA,applauds,hunts,for,hunts for,firefighter __________ pediatrician
+firefighter,pediatrician,applaud,scrutinize,31.5689,28.14948605,9,2,applauds,NA,applauds,scrutinizes,NA,scrutinizes,firefighter __________ pediatrician
+firefighter,surgeon,laugh with,have a heart to heart talk with,12.873,13.46145561,10,3,laughs,with,laughs with,haves,a heart to heart talk with,has a heart to heart talk with,firefighter __________ surgeon
+firefighter,surgeon,laugh with,fool,33.9926,30.19056837,11,4,laughs,with,laughs with,fools,NA,fools,firefighter __________ surgeon
+firefighter,teacher,laugh with,bequeath to,14.0675,10.97249374,12,4,laughs,with,laughs with,bequeaths,to,bequeathes to,firefighter __________ teacher
+firefighter,teacher,laugh with,quibble with,24.9786,20.56719206,13,3,laughs,with,laughs with,quibbles,with,quibbles with,firefighter __________ teacher
+firefighter,technician,congratulate,concede to,25.0066,26.39452171,14,2,congratulates,NA,congratulates,concedes,to,concedes to,firefighter __________ technician
+firefighter,technician,congratulate,fear,44.0701,44.92466768,15,1,congratulates,NA,congratulates,fears,NA,fears,firefighter __________ technician
+foreman,bailiff,show something to,drive out,7.2995,7.181869083,15,1,shows,something to,shows something to,drives,out,drives out,foreman __________ bailiff
+foreman,bailiff,show something to,displease,6.7154,8.332591425,14,2,shows,something to,shows something to,displeases,NA,displeases,foreman __________ bailiff
+foreman,civil engineer,show something to,apologize to,5.4317,5.971449868,13,3,shows,something to,shows something to,apologizes,to,apologizes to,foreman __________ civil engineer
+foreman,civil engineer,show something to,hurt,19.0573,20.51652404,12,4,shows,something to,shows something to,hurts,NA,hurts,foreman __________ civil engineer
+foreman,cook,ask about,abhor,14.377,12.26424735,11,4,asks,about,asks about,abhors,NA,abhors,foreman __________ cook
+foreman,cook,ask about,threaten,25.8408,22.91096427,10,3,asks,about,asks about,threatens,NA,threatens,foreman __________ cook
+foreman,crane operator,show something to,scare,9.1394,8.953451483,9,2,shows,something to,shows something to,scares,NA,scares,foreman __________ crane operator
+foreman,crane operator,show something to,mock,16.2153,15.51688412,8,1,shows,something to,shows something to,mocks,NA,mocks,foreman __________ crane operator
+foreman,defense attorney,emulate,welcome,8.1354,6.702489016,7,1,emulates,NA,emulates,welcomes,NA,welcomes,foreman __________ defense attorney
+foreman,defense attorney,emulate,haze,14.6868,17.69805234,6,2,emulates,NA,emulates,hazes,NA,hazes,foreman __________ defense attorney
+foreman,dental hygienist,show something to,snuggle,6.6674,6.85778918,5,3,shows,something to,shows something to,snuggles,NA,snuggles,foreman __________ dental hygienist
+foreman,dental hygienist,show something to,discomfort,11.8646,12.39449327,4,4,shows,something to,shows something to,discomforts,NA,discomforts,foreman __________ dental hygienist
+foreman,dentist,show something to,hurry,6.5501,6.431909174,3,4,shows,something to,shows something to,hurries,NA,hurries,foreman __________ dentist
+foreman,dentist,show something to,elect,6.8813,7.230855723,2,3,shows,something to,shows something to,elects,NA,elects,foreman __________ dentist
+foreman,firefighter,ask about,bait,12.1869,12.29606992,1,2,asks,about,asks about,baits,NA,baits,foreman __________ firefighter
+foreman,firefighter,ask about,disparage,15.3795,14.50324229,16,1,asks,about,asks about,disparages,NA,disparages,foreman __________ firefighter
+foreman,foreman,show something to,disappoint,17.183,15.53482901,13,1,shows,something to,shows something to,disappoints,NA,disappoints,foreman __________ foreman
+foreman,foreman,show something to,exploit,17.6622,16.75560854,12,2,shows,something to,shows something to,exploits,NA,exploits,foreman __________ foreman
+foreman,musician,show something to,kowtow to,9.1605,8.965542517,11,3,shows,something to,shows something to,kowtows,to,kowtows to,foreman __________ musician
+foreman,musician,show something to,mislead,12.2488,13.06259064,10,4,shows,something to,shows something to,misleads,NA,misleads,foreman __________ musician
+foreman,nurse,ask about,box,10.9525,9.095818588,9,4,asks,about,asks about,boxs,NA,boxs,foreman __________ nurse
+foreman,nurse,ask about,extort,17.2501,15.86530023,8,3,asks,about,asks about,extorts,NA,extorts,foreman __________ nurse
+foreman,nutritionist,ask about,doubt,7.1101,5.815408337,7,2,asks,about,asks about,doubts,NA,doubts,foreman __________ nutritionist
+foreman,nutritionist,ask about,borrow money from,8.3813,6.936948467,6,1,asks,about,asks about,borrows,money from,borrows money from,foreman __________ nutritionist
+foreman,pediatrician,ask about,disobey,9.3411,8.608543226,5,1,asks,about,asks about,disobeies,NA,disobeys,foreman __________ pediatrician
+foreman,pediatrician,ask about,give in to,12.3386,10.61996968,4,2,asks,about,asks about,gives,in to,gives in to,foreman __________ pediatrician
+foreman,surgeon,ask about,subdue,6.6897,7.143889779,3,3,asks,about,asks about,subdues,NA,subdues,foreman __________ surgeon
+foreman,surgeon,ask about,submit to,14.2219,12.70777646,2,4,asks,about,asks about,submits,to,submits to,foreman __________ surgeon
+foreman,teacher,ask about,disqualify,8.4494,7.96201731,1,4,asks,about,asks about,disqualifies,NA,disqualifies,foreman __________ teacher
+foreman,teacher,ask about,fire from a job,9.0321,9.021597071,16,3,asks,about,asks about,fires,from a job,fires from a job,foreman __________ teacher
+foreman,technician,show something to,deflate,11.5693,12.32058986,15,2,shows,something to,shows something to,deflates,NA,deflates,foreman __________ technician
+foreman,technician,show something to,make fun of,18.9907,19.39366091,14,1,shows,something to,shows something to,makes,fun of,makes fun of,foreman __________ technician
+musician,bailiff,call,bribe,9.7379,10.11875468,11,1,calls,NA,calls,bribes,NA,bribes,musician __________ bailiff
+musician,bailiff,call,snub,13.356,12.75747203,10,2,calls,NA,calls,snubs,NA,snubs,musician __________ bailiff
+musician,civil engineer,chat with,examine,6.4438,6.487492028,9,3,chats,with,chats with,examines,NA,examines,musician __________ civil engineer
+musician,civil engineer,chat with,bluff,11.5891,10.13036465,8,4,chats,with,chats with,bluffs,NA,bluffs,musician __________ civil engineer
+musician,cook,chat with,chide,10.2654,8.490921239,7,4,chats,with,chats with,chides,NA,chides,musician __________ cook
+musician,cook,chat with,evade,12.8884,11.16802822,6,3,chats,with,chats with,evades,NA,evades,musician __________ cook
+musician,crane operator,call,mislead,15.7214,16.91270699,5,2,calls,NA,calls,misleads,NA,misleads,musician __________ crane operator
+musician,crane operator,call,scream at,20.3961,22.55106636,4,1,calls,NA,calls,screams,at,screams at,musician __________ crane operator
+musician,defense attorney,call,reject,8.4209,9.073536991,3,1,calls,NA,calls,rejects,NA,rejects,musician __________ defense attorney
+musician,defense attorney,call,condemn,16.9961,18.83204934,2,2,calls,NA,calls,condemns,NA,condemns,musician __________ defense attorney
+musician,dental hygienist,chat with,displease,17.7533,14.70656242,1,3,chats,with,chats with,displeases,NA,displeases,musician __________ dental hygienist
+musician,dental hygienist,chat with,complain about,18.9379,15.02140245,16,4,chats,with,chats with,complains,about,complains about,musician __________ dental hygienist
+musician,dentist,chat with,grapple with,9.3929,7.237071215,15,4,chats,with,chats with,grapples,with,grapples with,musician __________ dentist
+musician,dentist,chat with,leer at,16.1214,13.44389271,14,3,chats,with,chats with,leers,at,leers at,musician __________ dentist
+musician,firefighter,joke with,indoctrinate,9.7236,8.912007989,13,2,jokes,with,jokes with,indoctrinates,NA,indoctrinates,musician __________ firefighter
+musician,firefighter,joke with,lie to,27.8842,23.8807499,12,1,jokes,with,jokes with,lies,to,lies to,musician __________ firefighter
+musician,foreman,call,confuse,8.7325,8.412683889,9,1,calls,NA,calls,confuses,NA,confuses,musician __________ foreman
+musician,foreman,call,interrupt,13.3714,13.65651105,8,2,calls,NA,calls,interrupts,NA,interrupts,musician __________ foreman
+musician,musician,chat with,obey,6.9918,5.955194723,7,3,chats,with,chats with,obeies,NA,obeys,musician __________ musician
+musician,musician,chat with,displease,17.7533,14.79439444,6,4,chats,with,chats with,displeases,NA,displeases,musician __________ musician
+musician,nurse,joke with,criticize,12.5682,9.09925142,5,4,jokes,with,jokes with,criticizes,NA,criticizes,musician __________ nurse
+musician,nurse,joke with,suspect,16.7531,12.18578585,4,3,jokes,with,jokes with,suspects,NA,suspects,musician __________ nurse
+musician,nutritionist,chat with,observe,9.8213,10.90624379,3,2,chats,with,chats with,observes,NA,observes,musician __________ nutritionist
+musician,nutritionist,chat with,lie to,23.6661,21.90665302,2,1,chats,with,chats with,lies,to,lies to,musician __________ nutritionist
+musician,pediatrician,joke with,discredit,18.3477,15.71096523,1,1,jokes,with,jokes with,discredits,NA,discredits,musician __________ pediatrician
+musician,pediatrician,joke with,frame,37.5518,33.5368485,16,2,jokes,with,jokes with,frames,NA,frames,musician __________ pediatrician
+musician,surgeon,joke with,order,10.3097,10.37551524,15,3,jokes,with,jokes with,orders,NA,orders,musician __________ surgeon
+musician,surgeon,joke with,evade,17.1389,12.18683119,14,4,jokes,with,jokes with,evades,NA,evades,musician __________ surgeon
+musician,teacher,chat with,box,11.5097,10.24907377,13,4,chats,with,chats with,boxs,NA,boxs,musician __________ teacher
+musician,teacher,chat with,unfriend,13.9477,14.04617461,12,3,chats,with,chats with,unfriends,NA,unfriends,musician __________ teacher
+musician,technician,chat with,inspect,6.9947,5.862355997,11,2,chats,with,chats with,inspects,NA,inspects,musician __________ technician
+musician,technician,chat with,disbelieve,10.5221,8.928934084,10,1,chats,with,chats with,disbelieves,NA,disbelieves,musician __________ technician
+nurse,bailiff,dine with,applaud,7.6691,8.897071387,7,1,dines,with,dines with,applauds,NA,applauds,nurse __________ bailiff
+nurse,bailiff,dine with,jest,10.8054,10.68881606,6,2,dines,with,dines with,jests,NA,jests,nurse __________ bailiff
+nurse,civil engineer,dine with,obey,5.0899,6.080480664,5,3,dines,with,dines with,obeies,NA,obeys,nurse __________ civil engineer
+nurse,civil engineer,dine with,hypnotize,7.4438,8.40220176,4,4,dines,with,dines with,hypnotizes,NA,hypnotizes,nurse __________ civil engineer
+nurse,cook,reply to,malign,18.4981,19.13189125,3,4,replies,to,replies to,maligns,NA,maligns,nurse __________ cook
+nurse,cook,reply to,chew out,22.1913,23.79140682,2,3,replies,to,replies to,chews,out,chews out,nurse __________ cook
+nurse,crane operator,dine with,inspire,5.4506,5.236676673,1,2,dines,with,dines with,inspires,NA,inspires,nurse __________ crane operator
+nurse,crane operator,dine with,tempt,13.7121,13.52899863,16,1,dines,with,dines with,tempts,NA,tempts,nurse __________ crane operator
+nurse,defense attorney,dine with,bend,10.8315,10.41690678,15,1,dines,with,dines with,bends,NA,bends,nurse __________ defense attorney
+nurse,defense attorney,dine with,sneer at,22.1189,21.13614516,14,2,dines,with,dines with,sneers,at,sneers at,nurse __________ defense attorney
+nurse,dental hygienist,invite,evade,14.708,13.97225023,13,3,invites,NA,invites,evades,NA,evades,nurse __________ dental hygienist
+nurse,dental hygienist,invite,desert,29.3578,28.75712513,12,4,invites,NA,invites,deserts,NA,deserts,nurse __________ dental hygienist
+nurse,dentist,dine with,mortify,26.8094,27.33542046,11,4,dines,with,dines with,mortifies,NA,mortifies,nurse __________ dentist
+nurse,dentist,dine with,haunt,26.1385,27.57805037,10,3,dines,with,dines with,haunts,NA,haunts,nurse __________ dentist
+nurse,firefighter,chat with,obstruct,14.7641,16.79668276,9,2,chats,with,chats with,obstructs,NA,obstructs,nurse __________ firefighter
+nurse,firefighter,chat with,double cross,26.4339,29.09011988,8,1,chats,with,chats with,doubles,cross,double crosses,nurse __________ firefighter
+nurse,foreman,admire,elude,8.3977,8.469781832,5,1,admires,NA,admires,eludes,NA,eludes,nurse __________ foreman
+nurse,foreman,admire,sicken,24.9761,25.1845557,4,2,admires,NA,admires,sickens,NA,sickens,nurse __________ foreman
+nurse,musician,invite,flee,11.0657,10.60711636,3,3,invites,NA,invites,flees,NA,flees,nurse __________ musician
+nurse,musician,invite,grapple with,12.4125,12.24457313,2,4,invites,NA,invites,grapples,with,grapples with,nurse __________ musician
+nurse,nurse,reply to,alarm,9.5304,9.711154649,1,4,replies,to,replies to,alarms,NA,alarms,nurse __________ nurse
+nurse,nurse,reply to,short change,27.1556,26.94729611,16,3,replies,to,replies to,shorts,change,shorts change,nurse __________ nurse
+nurse,nutritionist,reply to,assess,5.8749,5.436894575,15,2,replies,to,replies to,assesss,NA,assesses,nurse __________ nutritionist
+nurse,nutritionist,reply to,get even with,17.8465,17.97002194,14,1,replies,to,replies to,gets,even with,gets even with,nurse __________ nutritionist
+nurse,pediatrician,reply to,befuddle,13.84,14.05497375,13,1,replies,to,replies to,befuddles,NA,befuddles,nurse __________ pediatrician
+nurse,pediatrician,reply to,curse,25.4355,25.84941825,12,2,replies,to,replies to,curses,NA,curses,nurse __________ pediatrician
+nurse,surgeon,eat with,borrow money from,17.975,15.50623573,11,3,eats,with,eats with,borrows,money from,borrows money from,nurse __________ surgeon
+nurse,surgeon,eat with,yell at,22.5065,22.34620512,10,4,eats,with,eats with,yells,at,yells at,nurse __________ surgeon
+nurse,teacher,reply to,tell off,13.4435,14.84466494,9,4,replies,to,replies to,tells,off,tells off,nurse __________ teacher
+nurse,teacher,reply to,envy,29.0842,29.36297664,8,3,replies,to,replies to,envies,NA,envies,nurse __________ teacher
+nurse,technician,invite,chide,12.6026,12.22096807,7,2,invites,NA,invites,chides,NA,chides,nurse __________ technician
+nurse,technician,invite,baby,19.0793,18.16090109,6,1,invites,NA,invites,babies,NA,babies,nurse __________ technician
+nutritionist,bailiff,turn to,detain,8.8109,9.865982083,3,1,turns,to,turns to,detains,NA,detains,nutritionist __________ bailiff
+nutritionist,bailiff,turn to,undermine,19.1285,18.28966868,2,2,turns,to,turns to,undermines,NA,undermines,nutritionist __________ bailiff
+nutritionist,civil engineer,dine with,reproach,10.0358,8.258205284,1,3,dines,with,dines with,reproachs,NA,reproaches,nutritionist __________ civil engineer
+nutritionist,civil engineer,dine with,hound,18.8675,16.34289429,16,4,dines,with,dines with,hounds,NA,hounds,nutritionist __________ civil engineer
+nutritionist,cook,dine with,confound,7.443,5.954790009,15,4,dines,with,dines with,confounds,NA,confounds,nutritionist __________ cook
+nutritionist,cook,dine with,blabber to,18.768,15.50235392,14,3,dines,with,dines with,blabbers,to,blabbers to,nutritionist __________ cook
+nutritionist,crane operator,turn to,beseech,7.5921,7.813167139,13,2,turns,to,turns to,beseechs,NA,beseeches,nutritionist __________ crane operator
+nutritionist,crane operator,turn to,cut someone down to size,12.5242,13.40583896,12,1,turns,to,turns to,cuts,someone down to size,cuts someone down to size,nutritionist __________ crane operator
+nutritionist,defense attorney,serve,rib,8.7053,11.35974719,11,1,serves,NA,serves,ribs,NA,ribs,nutritionist __________ defense attorney
+nutritionist,defense attorney,serve,repulse,15.2506,19.2754566,10,2,serves,NA,serves,repulses,NA,repulses,nutritionist __________ defense attorney
+nutritionist,dental hygienist,turn to,giggle at,5.1626,5.0385717,9,3,turns,to,turns to,giggles,at,giggles at,nutritionist __________ dental hygienist
+nutritionist,dental hygienist,turn to,nag,21.5538,21.48254768,8,4,turns,to,turns to,nags,NA,nags,nutritionist __________ dental hygienist
+nutritionist,dentist,turn to,follow,7.8285,8.513403048,7,4,turns,to,turns to,follows,NA,follows,nutritionist __________ dentist
+nutritionist,dentist,turn to,shock,10.6916,11.52794554,6,3,turns,to,turns to,shocks,NA,shocks,nutritionist __________ dentist
+nutritionist,firefighter,answer,save,9.9315,10.75910332,5,2,answers,NA,answers,saves,NA,saves,nutritionist __________ firefighter
+nutritionist,firefighter,answer,demand,11.6665,13.74311024,4,1,answers,NA,answers,demands,NA,demands,nutritionist __________ firefighter
+nutritionist,foreman,turn to,confront,5.1354,6.259159943,1,1,turns,to,turns to,confronts,NA,confronts,nutritionist __________ foreman
+nutritionist,foreman,turn to,freakout,16.8492,17.53980515,16,2,turns,to,turns to,freakouts,NA,freakouts,nutritionist __________ foreman
+nutritionist,musician,turn to,stare down,13.524,15.43993385,15,3,turns,to,turns to,stares,down,stares down,nutritionist __________ musician
+nutritionist,musician,turn to,anger,20.4017,21.16575441,14,4,turns,to,turns to,angers,NA,angers,nutritionist __________ musician
+nutritionist,nurse,answer,dispute,5.1816,6.265633553,13,4,answers,NA,answers,disputes,NA,disputes,nutritionist __________ nurse
+nutritionist,nurse,answer,coerce,8.5504,10.3458702,12,3,answers,NA,answers,coerces,NA,coerces,nutritionist __________ nurse
+nutritionist,nutritionist,answer,ban,12.9107,15.28129078,11,2,answers,NA,answers,bans,NA,bans,nutritionist __________ nutritionist
+nutritionist,nutritionist,answer,enrage,20.2214,23.05065698,10,1,answers,NA,answers,enrages,NA,enrages,nutritionist __________ nutritionist
+nutritionist,pediatrician,answer,drive out,10.7379,13.0512885,9,1,answers,NA,answers,drives,out,drives out,nutritionist __________ pediatrician
+nutritionist,pediatrician,answer,needle,13.9493,15.19304737,8,2,answers,NA,answers,needles,NA,needles,nutritionist __________ pediatrician
+nutritionist,surgeon,dine with,disturb,22.5334,20.43269416,7,3,dines,with,dines with,disturbs,NA,disturbs,nutritionist __________ surgeon
+nutritionist,surgeon,dine with,repulse,22.787,21.25445951,6,4,dines,with,dines with,repulses,NA,repulses,nutritionist __________ surgeon
+nutritionist,teacher,dine with,incriminate,15.0278,13.68081004,5,4,dines,with,dines with,incriminates,NA,incriminates,nutritionist __________ teacher
+nutritionist,teacher,dine with,misinform,22.9745,20.83693074,4,3,dines,with,dines with,misinforms,NA,misinforms,nutritionist __________ teacher
+nutritionist,technician,turn to,denounce,15.8734,16.93093281,3,2,turns,to,turns to,denounces,NA,denounces,nutritionist __________ technician
+nutritionist,technician,turn to,shaft,21.2726,22.41611677,2,1,turns,to,turns to,shafts,NA,shafts,nutritionist __________ technician
+pediatrician,bailiff,grin at,pooh pooh,17.5246,18.78409328,14,1,grins,at,grins at,poohs,pooh,poohes pooh,pediatrician __________ bailiff
+pediatrician,bailiff,grin at,snub,20.0453,21.22842473,13,2,grins,at,grins at,snubs,NA,snubs,pediatrician __________ bailiff
+pediatrician,civil engineer,acknowledge,demote,16.4102,16.48380677,12,3,acknowledges,NA,acknowledges,demotes,NA,demotes,pediatrician __________ civil engineer
+pediatrician,civil engineer,acknowledge,mortify,28.961,29.3906981,11,4,acknowledges,NA,acknowledges,mortifies,NA,mortifies,pediatrician __________ civil engineer
+pediatrician,cook,acknowledge,underrate,23.9466,24.14998665,10,4,acknowledges,NA,acknowledges,underrates,NA,underrates,pediatrician __________ cook
+pediatrician,cook,acknowledge,fail,30.6106,30.81069159,9,3,acknowledges,NA,acknowledges,fails,NA,fails,pediatrician __________ cook
+pediatrician,crane operator,explain something to,shun,23.7254,24.35836119,8,2,explains,something to,explains something to,shuns,NA,shuns,pediatrician __________ crane operator
+pediatrician,crane operator,explain something to,dupe,24.7689,25.563923,7,1,explains,something to,explains something to,dupes,NA,dupes,pediatrician __________ crane operator
+pediatrician,defense attorney,grin at,watch,7.9844,8.272216301,6,1,grins,at,grins at,watchs,NA,watches,pediatrician __________ defense attorney
+pediatrician,defense attorney,grin at,order,12.347,13.60962876,5,2,grins,at,grins at,orders,NA,orders,pediatrician __________ defense attorney
+pediatrician,dental hygienist,advise,bow to,9.0538,8.56890449,4,3,advises,NA,advises,bows,to,bows to,pediatrician __________ dental hygienist
+pediatrician,dental hygienist,advise,disregard,25.9326,25.3609101,3,4,advises,NA,advises,disregards,NA,disregards,pediatrician __________ dental hygienist
+pediatrician,dentist,treat,shush,15.0726,14.52953991,2,4,treats,NA,treats,shushs,NA,shushes,pediatrician __________ dentist
+pediatrician,dentist,treat,scare,19.6274,19.45723205,1,3,treats,NA,treats,scares,NA,scares,pediatrician __________ dentist
+pediatrician,firefighter,praise,comfort,5.9106,5.977603163,16,2,praises,NA,praises,comforts,NA,comforts,pediatrician __________ firefighter
+pediatrician,firefighter,praise,obstruct,18.7089,18.78005464,15,1,praises,NA,praises,obstructs,NA,obstructs,pediatrician __________ firefighter
+pediatrician,foreman,remember,smirk at,11.4038,12.21362489,12,1,remembers,NA,remembers,smirks,at,smirks at,pediatrician __________ foreman
+pediatrician,foreman,remember,debase,18.1332,19.3612676,11,2,remembers,NA,remembers,debases,NA,debases,pediatrician __________ foreman
+pediatrician,musician,treat,monitor,10.0054,9.571738316,10,3,treats,NA,treats,monitors,NA,monitors,pediatrician __________ musician
+pediatrician,musician,treat,scream at,34.8785,34.39603568,9,4,treats,NA,treats,screams,at,screams at,pediatrician __________ musician
+pediatrician,nurse,reward,idealize,8.281,8.417602109,8,4,rewards,NA,rewards,idealizes,NA,idealizes,pediatrician __________ nurse
+pediatrician,nurse,reward,defy,14.5438,14.73873901,7,3,rewards,NA,rewards,defies,NA,defies,pediatrician __________ nurse
+pediatrician,nutritionist,raise the pay of,miss,11.7154,11.71973199,6,2,raises,the pay of,raises the pay of,misss,NA,misses,pediatrician __________ nutritionist
+pediatrician,nutritionist,raise the pay of,underrate,24.3073,23.87100572,5,1,raises,the pay of,raises the pay of,underrates,NA,underrates,pediatrician __________ nutritionist
+pediatrician,pediatrician,reward,evade,17.645,17.66165388,4,1,rewards,NA,rewards,evades,NA,evades,pediatrician __________ pediatrician
+pediatrician,pediatrician,reward,ostracize,28.555,29.57145645,3,2,rewards,NA,rewards,ostracizes,NA,ostracizes,pediatrician __________ pediatrician
+pediatrician,surgeon,eat with,grouse at,16.1019,17.51448431,2,3,eats,with,eats with,grouses,at,grouses at,pediatrician __________ surgeon
+pediatrician,surgeon,eat with,nag,24.8694,27.36318021,1,4,eats,with,eats with,nags,NA,nags,pediatrician __________ surgeon
+pediatrician,teacher,like,doubt,15.4386,16.53838501,16,4,likes,NA,likes,doubts,NA,doubts,pediatrician __________ teacher
+pediatrician,teacher,like,yell at,24.4891,24.75528023,15,3,likes,NA,likes,yells,at,yells at,pediatrician __________ teacher
+pediatrician,technician,treat,yield to,17.2078,16.70058625,14,2,treats,NA,treats,yields,to,yields to,pediatrician __________ technician
+pediatrician,technician,treat,horrify,26.4329,25.81742516,13,1,treats,NA,treats,horrifies,NA,horrifies,pediatrician __________ technician
+surgeon,bailiff,counsel,demoralize,5.6902,35.50268032,10,1,counsels,NA,counsels,demoralizes,NA,demoralizes,surgeon __________ bailiff
+surgeon,bailiff,counsel,frown at,22.0296,20.41446387,9,2,counsels,NA,counsels,frowns,at,frowns at,surgeon __________ bailiff
+surgeon,civil engineer,guide,spurn,23.0294,24.16866535,8,3,guides,NA,guides,spurns,NA,spurns,surgeon __________ civil engineer
+surgeon,civil engineer,guide,manipulate,28.591,29.64039317,7,4,guides,NA,guides,manipulates,NA,manipulates,surgeon __________ civil engineer
+surgeon,cook,guide,neglect,36.5851,37.83384693,6,4,guides,NA,guides,neglects,NA,neglects,surgeon __________ cook
+surgeon,cook,guide,beg,38.2857,40.3505762,5,3,guides,NA,guides,begs,NA,begs,surgeon __________ cook
+surgeon,crane operator,apologize to,surprise,7.9427,7.38532658,4,2,apologizes,to,apologizes to,surprises,NA,surprises,surgeon __________ crane operator
+surgeon,crane operator,apologize to,idealize,10.3464,9.482133346,3,1,apologizes,to,apologizes to,idealizes,NA,idealizes,surgeon __________ crane operator
+surgeon,defense attorney,counsel,constrain,23.6266,22.14692014,2,1,counsels,NA,counsels,constrains,NA,constrains,surgeon __________ defense attorney
+surgeon,defense attorney,counsel,give in to,25.8986,24.0943365,1,2,counsels,NA,counsels,gives,in to,gives in to,surgeon __________ defense attorney
+surgeon,dental hygienist,guide,indoctrinate,7.9454,8.138436014,16,3,guides,NA,guides,indoctrinates,NA,indoctrinates,surgeon __________ dental hygienist
+surgeon,dental hygienist,guide,demean,33.5873,34.82677016,15,4,guides,NA,guides,demeans,NA,demeans,surgeon __________ dental hygienist
+surgeon,dentist,guide,badger,32.2564,33.86701034,14,4,guides,NA,guides,badgers,NA,badgers,surgeon __________ dentist
+surgeon,dentist,guide,degrade,40.5369,41.57831391,13,3,guides,NA,guides,degrades,NA,degrades,surgeon __________ dentist
+surgeon,firefighter,foster,upset,29.6525,29.50532702,12,2,fosters,NA,fosters,upsets,NA,upsets,surgeon __________ firefighter
+surgeon,firefighter,foster,jeer,32.0754,32.04184821,11,1,fosters,NA,fosters,jeers,NA,jeers,surgeon __________ firefighter
+surgeon,foreman,counsel,grab,23.0406,21.56731459,8,1,counsels,NA,counsels,grabs,NA,grabs,surgeon __________ foreman
+surgeon,foreman,counsel,upstage,23.9426,22.51179208,7,2,counsels,NA,counsels,upstages,NA,upstages,surgeon __________ foreman
+surgeon,musician,guide,need,9.525,10.90965866,6,3,guides,NA,guides,needs,NA,needs,surgeon __________ musician
+surgeon,musician,guide,make fun of,38.7107,40.27421296,5,4,guides,NA,guides,makes,fun of,makes fun of,surgeon __________ musician
+surgeon,nurse,guard,overwork,23.9993,25.57202992,4,4,guards,NA,guards,overworks,NA,overworks,surgeon __________ nurse
+surgeon,nurse,guard,insult,34.5414,36.33076985,3,3,guards,NA,guards,insults,NA,insults,surgeon __________ nurse
+surgeon,nutritionist,guide,shout at,26.5734,26.58805936,2,2,guides,NA,guides,shouts,at,shouts at,surgeon __________ nutritionist
+surgeon,nutritionist,guide,neglect,36.5851,37.37631878,1,1,guides,NA,guides,neglects,NA,neglects,surgeon __________ nutritionist
+surgeon,pediatrician,foster,comply with,6.9781,7.20772352,16,1,fosters,NA,fosters,complies,with,complies with,surgeon __________ pediatrician
+surgeon,pediatrician,foster,bind,19.0484,19.08093948,15,2,fosters,NA,fosters,binds,NA,binds,surgeon __________ pediatrician
+surgeon,surgeon,REASSURE,alarm,NEED TO FIX,NEED TO FIX,14,3,REASSUREs,NA,REASSUREs,alarms,NA,alarms,surgeon __________ surgeon
+surgeon,surgeon,REASSURE,banish,NEED TO FIX,NEED TO FIX,13,4,REASSUREs,NA,REASSUREs,banishs,NA,banishes,surgeon __________ surgeon
+surgeon,teacher,accept,assess,7.1714,7.33090417,12,4,accepts,NA,accepts,assesss,NA,assesses,surgeon __________ teacher
+surgeon,teacher,accept,avenge,10.3848,10.76955583,11,3,accepts,NA,accepts,avenges,NA,avenges,surgeon __________ teacher
+surgeon,technician,guide,banter with,11.7388,13.27537356,10,2,guides,NA,guides,banters,with,banters with,surgeon __________ technician
+surgeon,technician,guide,borrow money from,20.8884,22.51170607,9,1,guides,NA,guides,borrows,money from,borrows money from,surgeon __________ technician
+teacher,bailiff,consider,hypnotize,5.153,5.340975744,6,1,considers,NA,considers,hypnotizes,NA,hypnotizes,teacher __________ bailiff
+teacher,bailiff,consider,demand,14.7691,15.70251053,5,2,considers,NA,considers,demands,NA,demands,teacher __________ bailiff
+teacher,civil engineer,please,laugh at,12.7403,13.21238517,4,3,pleases,NA,pleases,laughs,at,laughes at,teacher __________ civil engineer
+teacher,civil engineer,please,hurt,31.8756,32.17198059,3,4,pleases,NA,pleases,hurts,NA,hurts,teacher __________ civil engineer
+teacher,cook,attend to,endure,7.6018,7.087126383,2,4,attends,to,attends to,endures,NA,endures,teacher __________ cook
+teacher,cook,attend to,incite,9.9861,9.35327408,1,3,attends,to,attends to,incites,NA,incites,teacher __________ cook
+teacher,crane operator,remember,rouse,5.2218,5.334536312,16,2,remembers,NA,remembers,rouses,NA,rouses,teacher __________ crane operator
+teacher,crane operator,remember,exhaust,11.4737,11.33494258,15,1,remembers,NA,remembers,exhausts,NA,exhausts,teacher __________ crane operator
+teacher,defense attorney,admire,dissuade,5.1953,5.1604448,14,1,admires,NA,admires,dissuades,NA,dissuades,teacher __________ defense attorney
+teacher,defense attorney,admire,peek at,16.0675,16.28363225,13,2,admires,NA,admires,peeks,at,peeks at,teacher __________ defense attorney
+teacher,dental hygienist,explain something to,someone is,11.3438,10.7103457,12,3,explains,something to,explains something to,someones,is,someones is,teacher __________ dental hygienist
+teacher,dental hygienist,explain something to,banish,22.2642,21.1421082,11,4,explains,something to,explains something to,banishs,NA,banishes,teacher __________ dental hygienist
+teacher,dentist,please,stare at,14.877,14.50443302,10,4,pleases,NA,pleases,stares,at,stares at,teacher __________ dentist
+teacher,dentist,please,retaliate against,15.5701,15.96965732,9,3,pleases,NA,pleases,retaliates,against,retaliates against,teacher __________ dentist
+teacher,firefighter,invite,obey,7.1946,7.55989925,8,2,invites,NA,invites,obeies,NA,obeys,teacher __________ firefighter
+teacher,firefighter,invite,abet,7.6386,7.864406113,7,1,invites,NA,invites,abets,NA,abets,teacher __________ firefighter
+teacher,foreman,consider,silence,9.9867,10.44469657,4,1,considers,NA,considers,silences,NA,silences,teacher __________ foreman
+teacher,foreman,consider,desert,25.1571,25.96157131,3,2,considers,NA,considers,deserts,NA,deserts,teacher __________ foreman
+teacher,musician,explain something to,cross examine,6.3709,5.774416401,2,3,explains,something to,explains something to,crosss,examine,cross examines,teacher __________ musician
+teacher,musician,explain something to,extol,6.8494,6.167740887,1,4,explains,something to,explains something to,extols,NA,extols,teacher __________ musician
+teacher,nurse,commend,query,5.6125,5.265704986,16,4,commends,NA,commends,queries,NA,queries,teacher __________ nurse
+teacher,nurse,commend,terrorize,36.6269,37.20370561,15,3,commends,NA,commends,terrorizes,NA,terrorizes,teacher __________ nurse
+teacher,nutritionist,attend to,banter with,7.1318,6.712291976,14,2,attends,to,attends to,banters,with,banters with,teacher __________ nutritionist
+teacher,nutritionist,attend to,search,8.7001,7.980474553,13,1,attends,to,attends to,searchs,NA,searches,teacher __________ nutritionist
+teacher,pediatrician,invite,embarrass,24.4289,24.53552058,12,1,invites,NA,invites,embarrasss,NA,embarrasses,teacher __________ pediatrician
+teacher,pediatrician,invite,demoralize,31.8105,32.19886186,11,2,invites,NA,invites,demoralizes,NA,demoralizes,teacher __________ pediatrician
+teacher,surgeon,reply to,study,6.1931,5.731452626,10,3,replies,to,replies to,studies,NA,studies,teacher __________ surgeon
+teacher,surgeon,reply to,jest,9.6353,11.15227766,9,4,replies,to,replies to,jests,NA,jests,teacher __________ surgeon
+teacher,teacher,invite,punish,11.6262,12.23184688,8,4,invites,NA,invites,punishs,NA,punishes,teacher __________ teacher
+teacher,teacher,invite,restrain,14.0829,14.80905492,7,3,invites,NA,invites,restrains,NA,restrains,teacher __________ teacher
+teacher,technician,experience,refuse,10.1106,10.91147459,6,2,experiences,NA,experiences,refuses,NA,refuses,teacher __________ technician
+teacher,technician,experience,bug,21.3426,22.45389858,5,1,experiences,NA,experiences,bugs,NA,bugs,teacher __________ technician
+technician,bailiff,serve,impede,10.7189,11.06250188,2,1,serves,NA,serves,impedes,NA,impedes,technician __________ bailiff
+technician,bailiff,serve,plot against,16.2437,17.21201574,1,2,serves,NA,serves,plots,against,plots against,technician __________ bailiff
+technician,civil engineer,ask about,fine,7.9145,9.258450383,16,3,asks,about,asks about,fines,NA,fines,technician __________ civil engineer
+technician,civil engineer,ask about,misjudge,15.0329,16.04539878,15,4,asks,about,asks about,misjudges,NA,misjudges,technician __________ civil engineer
+technician,cook,ask about,frustrate,13.7939,14.52001681,14,4,asks,about,asks about,frustrates,NA,frustrates,technician __________ cook
+technician,cook,ask about,condemn,19.037,20.67729137,13,3,asks,about,asks about,condemns,NA,condemns,technician __________ cook
+technician,crane operator,ask about,deflate,15.3194,15.63618669,12,2,asks,about,asks about,deflates,NA,deflates,technician __________ crane operator
+technician,crane operator,ask about,envy,19.2286,18.62362145,11,1,asks,about,asks about,envies,NA,envies,technician __________ crane operator
+technician,defense attorney,serve,dare,6.1317,6.163888668,10,1,serves,NA,serves,dares,NA,dares,technician __________ defense attorney
+technician,defense attorney,serve,fine,7.6206,8.5163939,9,2,serves,NA,serves,fines,NA,fines,technician __________ defense attorney
+technician,dental hygienist,ask about,misinform,16.0484,16.96082017,8,3,asks,about,asks about,misinforms,NA,misinforms,technician __________ dental hygienist
+technician,dental hygienist,ask about,bother,17.835,18.01480125,7,4,asks,about,asks about,bothers,NA,bothers,technician __________ dental hygienist
+technician,dentist,ask about,chide,6.9842,7.556517612,6,4,asks,about,asks about,chides,NA,chides,technician __________ dentist
+technician,dentist,ask about,discriminate against,27.0114,28.46267255,5,3,asks,about,asks about,discriminates,against,discriminates against,technician __________ dentist
+technician,firefighter,chat with,leer at,16.1214,11.88247499,4,2,chats,with,chats with,leers,at,leers at,technician __________ firefighter
+technician,firefighter,chat with,ridicule,28.3848,24.48310124,3,1,chats,with,chats with,ridicules,NA,ridicules,technician __________ firefighter
+technician,foreman,serve,stall,6.2642,6.281727419,16,1,serves,NA,serves,stalls,NA,stalls,technician __________ foreman
+technician,foreman,serve,loathe,14.9898,15.11088653,15,2,serves,NA,serves,loathes,NA,loathes,technician __________ foreman
+technician,musician,ask about,deride,11.2845,11.7864094,14,3,asks,about,asks about,derides,NA,derides,technician __________ musician
+technician,musician,ask about,ignore,13.107,14.72981238,13,4,asks,about,asks about,ignores,NA,ignores,technician __________ musician
+technician,nurse,answer,scrutinize,13.8968,12.63433083,12,4,answers,NA,answers,scrutinizes,NA,scrutinizes,technician __________ nurse
+technician,nurse,answer,shout at,15.8414,15.08446259,11,3,answers,NA,answers,shouts,at,shouts at,technician __________ nurse
+technician,nutritionist,ask about,sneer at,15.0314,16.08780216,10,2,asks,about,asks about,sneers,at,sneers at,technician __________ nutritionist
+technician,nutritionist,ask about,offend,16.7962,17.54651079,9,1,asks,about,asks about,offends,NA,offends,technician __________ nutritionist
+technician,pediatrician,chat with,disillusion,15.6866,13.48304774,8,1,chats,with,chats with,disillusions,NA,disillusions,technician __________ pediatrician
+technician,pediatrician,chat with,repulse,20.8957,18.01742345,7,2,chats,with,chats with,repulses,NA,repulses,technician __________ pediatrician
+technician,surgeon,chat with,detain,10.2914,10.52997847,6,3,chats,with,chats with,detains,NA,detains,technician __________ surgeon
+technician,surgeon,chat with,underrate,18.4241,15.05633725,5,4,chats,with,chats with,underrates,NA,underrates,technician __________ surgeon
+technician,teacher,ask about,teach,5.463,6.239394034,4,4,asks,about,asks about,teachs,NA,teaches,technician __________ teacher
+technician,teacher,ask about,envy,19.2286,20.92471864,3,3,asks,about,asks about,envies,NA,envies,technician __________ teacher
+technician,technician,ask about,elude,5.211,5.986945414,2,2,asks,about,asks about,eludes,NA,eludes,technician __________ technician
+technician,technician,ask about,bend,6.4886,7.424144461,1,1,asks,about,asks about,bends,NA,bends,technician __________ technician

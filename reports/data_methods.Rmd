@@ -1,0 +1,650 @@
+---
+title: "Data, Methods and Results"
+author: "Em Maloney"
+date: "11/15/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+### Data 
+
+* Freeland and Hoey (2018) -- occupations
+* Maloney (2020) -- OSGs 
+* ISCO SIOPS to get prestige levels 
+* MTurk 
+
+#### Analytic Sample 
+
+  To construct the analytic sample of occupations, we selected four occupational identities from each occupational status group. In making these selections, we used several criteria. First, we wanted to select occupations that were close to the median EPA value of each occupational status group. Second, we wanted to maximize the differential in prestige within each occupational status group, so we selected two that were high in prestige for the occupational status group and two that were low in prestige for the occupational status group. Finally, we wanted to ensure some institutional coherence in our dyad prestige pairs, so we selected occupations that fell within similar instutional boundaries. Table X shows our final occupational identity selections, along with their prestige and distance from the median EPA of the occupational status group. For the Actively Revered occupational group, the distance for surgeon is larger because there were few occupational identities to choose from and we wanted to ensure a large prestige differential in the group. 
+  
+```{r}
+#libraries for analysis
+library(tidyverse) #data management
+library(here) #working directory 
+library(inteRact) #ACT calculations
+library(gssr) #GSS library 
+library(ISCO08ConveRsions) #to find the prestige scores
+library(gt) #tables
+library(gtExtras) #pretty tables
+library(janitor) #clean variable names so they're easier to deal with
+
+#read in data 
+deference_scores <- read_csv(here("data/BayesACT-MeanDeflection.csv"))
+blocks <- read_csv(here("data/block_info_bayesact.csv"))
+cw <- read_csv(here("data/new_crosswalk.csv"))
+identity_siops <- read_csv(here("data/new_identity_selection_paper.csv"))
+
+#GET SIOPS FOR EACH OCCUPATIONAL CODE
+data("gss_all")
+gss_all <- gss_all %>% 
+            select(isco88, isco08) %>% 
+            distinct()
+
+#calculate the SEI and SIOPS
+gss_join <- gss_all %>% 
+            filter(!is.na(isco08) & isco88 != 110 & isco08 != 9997) %>% 
+            mutate(isco08 = as.character(isco08)) %>% 
+            rowwise() %>% 
+            mutate(sei08 = isco08toisei08(isco08),
+                   siops08 = isco08tosiops08(isco08))
+
+#match with the crosswalk
+gss_siops <- left_join(gss_join, cw)
+
+#get average sei and siops
+gss_siops <- gss_siops %>% 
+             group_by(term) %>% 
+             summarise(avg_sei = mean(sei08),
+                       avg_siops = mean(siops08)) %>% 
+             ungroup() %>% 
+             mutate(identity = term) %>% select(-term)
+
+#get the average for each block
+blocks_avg <- blocks %>% 
+              group_by(blocks_4) %>% 
+              summarise(med_E = median(E),
+                        med_P = median(P),
+                        med_A = median(A),
+                        mean_E = mean(E),
+                        mean_P = mean(P),
+                        mean_A = mean(A))
+
+
+blocks_closest <- blocks %>% 
+                  left_join(blocks_avg) %>% 
+                  rowwise() %>% 
+                  mutate(med_diff = (E-med_E)^2 + (P-med_P)^2 + (A-med_A)^2,
+                         mean_diff = (E-mean_E)^2 + (P-mean_P)^2 + (A-mean_A)^2) %>% 
+                  ungroup() %>% 
+                  group_by(blocks_4) %>% 
+                  arrange(med_diff) %>%
+                  ungroup() %>% 
+                  mutate(identity = term) %>% 
+                  left_join(gss_siops) %>% 
+                  select(identity, E, P, A, blocks_4, med_diff, mean_diff, avg_siops)
+
+
+blocks_selection <- blocks_closest %>% 
+                    filter(identity %in% c("civil_engineer",
+                                           "technician",
+                                           "dentist",
+                                           "dental_hygienist",
+                                           "nutritionist",
+                                           "cook", "teacher", 
+                                           "musician", "defense_attorney",
+                                           "bailiff", "foreman", 
+                                           "crane_operator", "firefighter", 
+                                           "pediatrician", "surgeon", 
+                                           "nurse")) %>% 
+                    mutate(OSG = case_when(blocks_4 == 1 ~ "Everday Specialists",
+                                           blocks_4 == 2 ~ "Service-to-Society",
+                                           blocks_4 == 3 ~ "Disageeably Powerful",
+                                           blocks_4 == 4 ~ "Actively Revered"))
+
+blocks_selection <- left_join(blocks_selection, identity_siops)
+
+
+blocks_table <- blocks_selection %>% 
+                    select(identity, OSG, prestige, E, P, A, med_diff, new_siops) %>% 
+                    arrange(OSG, prestige)
+
+blocks_table %>% gt() %>% fmt_number(
+    columns = c(med_diff, new_siops),
+    decimals = 2,
+    use_seps = FALSE
+  )
+```
+
+### Methods 
+
+The analytic design for this paper takes two forms: simulation study and validation. In the former, we find the optimal behavior between all possible dyads of the identities that make up our analytic sample - a total of 256 behaviors. In Affect Control Theory, finding the optimal behavior is a minimization problem: given the EPA profile of the specified actor and object, and the impression formation equation, you solve for the EPA profile of the behavior that *minimizes* dislocation in EPA space for each element of the event: the actor identity, the object identity, and the behavior. The result of this optimization is a three-digit EPA profile specifying the Evaluation, Potency, and Activity of a behavior that maximally confirms both the actor and the object in an event. 
+
+We first calculated the EPA profile for the optimal behavior for every possible combination of occupational identities in our sample. Then, we found the nearest term that had been measured in a dictionary to that EPA profile to get a sense of the types of behaviors that have been identified as confirming for the dyad. We compare the simulation results across occupational status groups and prestige levels to better understand how status works interactionally. 
+
+To then validate that these results are accurate beyond the simulations, we fielded a survey on Amazon Mechanical Turk asking respondents to choose between two behaviors, one of which was the optimal behavior and the second which was a randomly selected behavior from the dictionary. 
+- More description here about selecting the random behavior: filtering out violent and sexual words, calculating distances and ensuring at least a distance of 5, and reading through for instances of institutional incompatibility. To analyze these results, we regress a binary indicator of choosing the optimal behavior on the distance between the random and optimal behavior. We expect that as the random behavior is further away in EPA space from the optimal behavior, respondents will be more likely to choose the optimal behavior. We use a multilevel model with questions nested in individuals who are nested in modules to account for the underlying grouping of our design. A full list of the stimuli for the validation study can be found in the online appendix to this paper. 
+
+
+### Results 
+
+#### Simulations
+```{r}
+#selected occupational identities 
+ids <- read_csv(here("data/new_identity_selection_paper.csv"))
+ids <- ids[1:16,]
+
+#create simulation dataset
+sims <- tibble(actor = rep(unique(ids$identity), 16),
+                   object = rep(unique(ids$identity), each = 16))
+
+#calculate the EPA for optimal behavior 
+sims_df <- sims %>% rowwise() %>%
+            mutate(b = list(maximally_confirm_behavior(actor = actor,
+                                                       object = object, equation = "us"))) %>%
+            unnest(b)
+
+#behaviors that are inappropriate
+bad_behaviors <- c("cuddle", "nuzzle", "lust_for", "play_with", "ravish", "caress", 
+                     "kiss", "cling_to", "date", "divorce", "break_up_with", "hookup_with",
+                     "have_an_affair_with", "be_intimate_with", "sleep_with", "arouse",
+                     "seduce", "molest", "marry", "cheat_on", "groom", "grasp", "titillate",
+                     "desire_sexually", "ask out", "make_love_to", "undress", "pet", 
+                      "beat_up", "elbow", "abduct", "slap", "bite", "mug",
+                       "murder", "inject_with_medicine", "cut", "choke", "kill",
+                       "psychoanalyze", "enslave", "diagnose", "abort", "beat", "medicate",
+                       "execute", "intruder", "handcuff", "lay off from a job", "underpay", "someone is",
+                       "stab", "tackle", "groom", "desire", "serenade", "adore", "bless",
+                      "desire_sexually", "pursue", "barter_with", "desire", "dress", "wash",
+                      "play_with", "sing_to", "marry", "be_intimate_with", "wink_at","ask_out",
+                      "entreat", "photograph", "pamper", "thrill", "giggle_with", "annihilate",
+                      "assassinate", "have_sex_with", "sexually_proposition", "strangle", "knife", 
+                   "assault", "rob", "whip", "brutalize", "torture", "poison", "exterminate", "slay", 
+                   "cripple", "drug", "club", "punch", "knock_out", "injure", "sock", "slug", "kick", 
+                   "brawl_with", "disable", "push", "have_sex_with", "propose_marriage_to", "horse_around_with", 
+                   "shoot", "rape", "destroy", "attack", "steal_from", "hit", "shove", "snarl_at", "trap", 
+                   "evict", "smother", "arrest", "rebel_against", "give_medical_treatment_to", "love", 
+                   "harm", "backstab", "blackmail", "embezzle_from", "flog", "peep_at", "imprison", "bewitch", 
+                   "proselytize", "bury", "bully", "pray_for", "blind", "defile", "bankrupt", "dicker_with", 
+                   "cut_off_relations_with", "ask_out", "bless", "court", "dance_with", "desire", 
+                   "dress", "groom", "wink_at")
+
+#find closest terms
+sims_opt_behavior <- sims_df %>% 
+           rowwise() %>% 
+           mutate(beh = list(closest_term(opt_E, opt_P, opt_A, term_typ = "behavior", max_dist = 5, num_terms = 5))) %>% 
+           unnest(beh) %>% 
+           filter(!(term_name %in% bad_behaviors)) %>% 
+           group_by(actor, object) %>% 
+           arrange(ssd) %>% 
+           slice(1)
+
+#write the data to file
+write_csv(sims_opt_behavior, file = here("data/optimal_behaviors_terms.csv"))
+
+
+#get info on status and prestige of the actors and objects 
+new_sims_long <- sims_df %>% mutate(id = row_number()) %>% 
+                 pivot_longer(actor:object, names_to = "position", values_to = "identity") %>%
+                 group_by(id) %>% mutate(event = str_c(identity, collapse = " ")) %>% ungroup() 
+
+new_sims_long <- left_join(new_sims_long, ids)
+
+new_sims_long_<- new_sims_long %>%  
+                 mutate(status = paste(position, block, sep = "_"),
+                        prestige = paste(position, prestige, sep = "_")) %>%
+                 select(opt_E, opt_P, opt_A, position, identity, block, prestige, status, event) %>%
+                 distinct()
+
+new_sims_wide <- new_sims_long %>% pivot_wider(names_from = position,
+                                              names_sep = ".",
+                             values_from = c(block, prestige), 
+                             id_cols = c(opt_E, opt_P, opt_A, event))
+
+
+new_sims_longer <- new_sims_wide %>%
+                 pivot_longer(opt_E:opt_A, names_to = "dimension", values_to = "value") %>%
+                 mutate(dimension = factor(dimension, levels = c("opt_E", "opt_P", "opt_A"))) %>% 
+                 mutate(actor_OSG = case_when(block.actor == 4 ~ "Actively Revered",
+                                              block.actor == 3 ~ "Disagreeably Powerful",
+                                              block.actor == 2 ~ "Service-to-Society",
+                                              block.actor == 1 ~ "Everyday Specialists"),
+                        object_OSG = case_when(block.object == 4 ~ "Actively Revered",
+                                              block.object == 3 ~ "Disagreeably Powerful",
+                                              block.object == 2 ~ "Service-to-Society",
+                                              block.object == 1 ~ "Everyday Specialists")) %>% 
+                 mutate(dimension = case_when(dimension == "opt_E" ~ "Evaluation",
+                                              dimension == "opt_P" ~ "Potency",
+                                              dimension == "opt_A" ~ "Activity"),
+                        dimension = factor(dimension, levels = c("Evaluation",
+                                                                 "Potency", 
+                                                                 "Activity")))
+
+#SPLIT INTO ONLY HIGH OR LOW PRESTIGE 
+#HIGH PRESTIGE
+high_sims <- new_sims_longer %>% 
+              filter(prestige.actor == "high" & prestige.object == "high")
+
+ggplot(data = high_sims, 
+       mapping = aes(x = dimension, y = value, fill = dimension)) +
+      geom_violin() + facet_grid(cols = vars(actor_OSG), rows = vars(object_OSG)) +
+      theme_minimal() + labs(title = "High Prestige Optimal Behavior in Dyad",
+                             subtitle = "By Occupational Status Group")
+
+#LOW PRESTIGE
+low_sims <- new_sims_longer %>% filter(prestige.actor == "low" & prestige.object == "low")
+
+ggplot(data = low_sims, 
+       mapping = aes(x = dimension, y = value, fill = dimension)) +
+      geom_violin() + facet_grid(cols = vars(actor_OSG), rows = vars(object_OSG)) +
+      theme_minimal() + labs(title = "Low Prestige Optimal Behavior in Dyad",
+                             subtitle = "By Occupational Status Group")
+
+##ALL OF THEM
+opt_beh_plot <- ggplot(data = new_sims_longer, mapping = aes(x = dimension, y = value, fill = dimension)) +
+                geom_violin() + facet_grid(cols = vars(actor_OSG), rows = vars(object_OSG)) +
+                theme_minimal() + labs(title = "Optimal Behavior in Dyad",
+                                       subtitle = "By Occupational Status Group") + 
+                scale_fill_grey() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+ggsave(filename = here("output/opt_beh_plot.png"),opt_beh_plot)
+
+opt_beh_plot
+
+
+
+prestige_opt_beh_plot <- ggplot(data = new_sims_longer, mapping = aes(x = dimension, y = value, fill = dimension)) +
+                geom_violin() + facet_grid(cols = vars(prestige.actor), rows = vars(prestige.object)) +
+                theme_minimal() + labs(title = "Optimal Behavior in Dyad",
+                                       subtitle = "By Occupational Status Group") + 
+                scale_fill_grey() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+prestige_opt_beh_plot
+ggsave(filename = here("output/prestige_opt_beh_plot.png"),prestige_opt_beh_plot)
+
+opt_beh_plot
+```
+
+
+Simulation Results: 
+- Blocks are separated the both the optimal behavior Evaluation and Potency 
+- Events involving Everyday Specialists and Service-to-Society tend to have similar estimated E behaviors regardless of whether they are the actors or objects 
+- On the other hand, Actively Revered and Disagreeably Powerful show considerable differences in E when they are the actors vs objects but in opposite directions: Actively Revered higher E when actor and Disagreeably Powerful lower E when actor 
+- Prestige is only separated on Potency, not evaluation 
+- Additionally, high prestige show bigger difference in expected P when actor/object versus low prestige 
+
+```{r}
+library(gt)
+library(gtExtras)
+
+table_info <- new_sims_longer %>% 
+              group_by(actor_OSG, object_OSG, dimension) %>% 
+              summarise(avg_opt = mean(value)) %>% ungroup() %>% 
+              pivot_wider(names_from = dimension, values_from = avg_opt) %>% 
+              rowwise() %>% 
+              mutate(closest_beh = list(closest_term(e = Evaluation, 
+                                           p = Potency, 
+                                           a = Activity, 
+                                           term_typ = "behavior",
+                                           num_terms = 10,
+                                           max_dist = 3))) %>%
+    unnest(closest_beh) %>% 
+    filter(!(term_name %in% bad_behaviors)) %>% 
+    group_by(actor_OSG, object_OSG, Evaluation, Potency, Activity) %>% 
+    summarise(example_behaviors = str_c(term_name, collapse = ", ")) %>% ungroup() %>% 
+    mutate(example_behaviors = str_replace_all(example_behaviors, "_", " "))
+
+# all <- table_info %>%
+#   gt() %>% 
+#   gt_theme_nytimes() %>% 
+#   tab_header(title = "Optimal Behaviors") %>% 
+#    gt_hulk_col_numeric(opt_E:opt_A,
+#                       trim = TRUE,
+#                       domain = range(-3, 3))
+
+
+all <- table_info %>% gt() %>% 
+  gt_theme_nytimes() %>% 
+  tab_header(title = "Optimal Behaviors") %>% 
+  fmt_number(
+    columns = c(Evaluation, Potency, Activity),
+    decimals = 2,
+    use_seps = FALSE
+  )
+
+all
+```
+
+
+
+```{r}
+library(gt)
+library(gtExtras)
+
+table_info <- high_sims %>% 
+              group_by(actor_OSG, object_OSG, dimension) %>% 
+              summarise(avg_opt = mean(value)) %>% ungroup() %>% 
+              pivot_wider(names_from = dimension, values_from = avg_opt) %>% 
+              rowwise() %>% 
+               mutate(closest_beh = list(closest_term(e = Evaluation, 
+                                           p = Potency, 
+                                           a = Activity, 
+                                           term_typ = "behavior",
+                                           num_terms = 10,
+                                           max_dist = 3))) %>%
+    unnest(closest_beh) %>% 
+    filter(!(term_name %in% bad_behaviors)) %>% 
+    group_by(actor_OSG, object_OSG, Evaluation, Potency, Activity) %>% 
+   slice(1:3) %>% 
+    summarise(example_behaviors = str_c(term_name, collapse = ", ")) %>% ungroup() %>% 
+    mutate(example_behaviors = str_replace_all(example_behaviors, "_", " "))
+
+# hs <- table_info %>%
+#   gt() %>% 
+#   gt_theme_nytimes() %>% 
+#   tab_header(title = "High Prestige: Average Optimal Behaviors") %>% 
+#    gt_hulk_col_numeric(opt_E:opt_A,
+#                       trim = TRUE,
+#                       domain = range(-3, 3))
+
+hs <- table_info %>%
+  gt() %>% 
+  gt_theme_nytimes() %>% 
+  tab_header(title = "Optimal Behaviors") %>% 
+  fmt_number(
+    columns = c(Evaluation, Potency, Activity),
+    decimals = 2,
+    use_seps = FALSE
+  )
+
+hs
+```
+
+```{r}
+table_info <- low_sims %>% 
+              group_by(actor_OSG, object_OSG, dimension) %>% 
+              summarise(avg_opt = mean(value)) %>% ungroup() %>% 
+              pivot_wider(names_from = dimension, values_from = avg_opt) %>% 
+              rowwise() %>% 
+               mutate(closest_beh = list(closest_term(e = Evaluation, 
+                                           p = Potency, 
+                                           a = Activity, 
+                                           term_typ = "behavior",
+                                           num_terms = 10,
+                                           max_dist = 3))) %>%
+    unnest(closest_beh) %>% 
+    filter(!(term_name %in% bad_behaviors)) %>% 
+    group_by(actor_OSG, object_OSG, Evaluation, Potency, Activity)  %>% 
+   slice(1:3) %>% 
+    summarise(example_behaviors = str_c(term_name, collapse = ", ")) %>% ungroup() %>% 
+    mutate(example_behaviors = str_replace_all(example_behaviors, "_", " "))
+
+# ls <- table_info %>%
+#   gt() %>% 
+#   gt_theme_nytimes() %>% 
+#   tab_header(title = "Low Prestige: Average Optimal Behaviors") %>% 
+#    gt_hulk_col_numeric(opt_E:opt_A,
+#                       trim = TRUE,
+#                       domain = range(-3, 3))
+
+ls <- table_info %>%
+  gt() %>% 
+  gt_theme_nytimes() %>% 
+  tab_header(title = "Low Prestige: Optimal Behaviors") %>% 
+  fmt_number(
+    columns = c(Evaluation, Potency, Activity),
+    decimals = 2,
+    use_seps = FALSE
+  )
+
+ls
+
+```
+
+#### Validation Results
+
+```{r, results='asis'}
+library(sjPlot)
+#reading in the data from the qualtrics survey
+validation_data <- read_csv(here("data/rsf_data_new_mod_1.csv"))
+validation_data <- clean_names(validation_data)
+
+#reading in data about the modules
+obt_modules_info <- read_csv(here("data/obt_with_matches.csv"))
+obt_modules_info <- obt_modules_info %>% 
+                    mutate(old_name = tolower(old_name),
+                           old_name = if_else(str_detect(old_name, fixed("_")), paste0("x", old_name), old_name),
+                           identifier = paste0("x", identifier))
+
+#rename questions so they actually have meaning 
+validation_renamed <- validation_data %>% 
+                      rename_at(vars(obt_modules_info$old_name), ~ obt_modules_info$identifier)
+
+#cleaning the data
+#pivot longer so now each row is a question with 32 observations per person 
+#identify if passed manipulation check or not 
+#identify whether was the old modules 13 and 14 with REASSUREs rather than reassure
+#identify whether was the old module 1 with bends and not bluffs 
+library(lubridate)
+validation_clean <- validation_renamed %>% 
+                    relocate(manip_check) %>% 
+                    pivot_longer(x1_1_bl_bl:x16_4_tr_nr, 
+                                 names_to = "identifier", 
+                                 values_to = "selection") %>% 
+                    filter(!is.na(selection)) %>% 
+                    mutate(module = identifier) %>% 
+                    separate(module, into = c("module", "question", "act", "obj"), 
+                             sep = "_") %>% 
+                    mutate(module = str_remove(module, "x"),
+                           pass_manip_check = if_else(manip_check == "cheers", "x", ""),
+                           reject_manip_check = if_else(manip_check != "cheers", 
+                                                        "did not pass attention check", "")) %>% 
+                    filter(pass_manip_check == "x") %>% 
+                    mutate(date = mdy_hm(start_date),
+                           old_mod_13_14 = if_else((module == "13" | module == "14") &
+                                                     date < ymd_hms("2021-11-16 10:28:00"), 1, 0),
+                           new_mod_13_14 = if_else((module == "13" | module == "14") &
+                                                     date >= ymd_hms("2021-11-16 10:28:00"), 1, 0),
+                           new_mod_1 = if_else(module == 1 & date > ymd_hms("2021-11-17 01:00:00"), 1, 0),
+                           old_mod_1 = if_else(module == 1 & date < ymd_hms("2021-11-17 01:00:00"), 1, 0),
+                           age_std = scale(age, center = TRUE, scale = TRUE))
+
+
+#check the IP address thing 
+check_ip <- validation_clean %>% 
+            group_by(ip_address) %>% 
+            select(ip_address, response_id) %>% 
+            distinct() %>% mutate(count = n()) %>% filter(count > 1)
+
+#remove ip addresses with more than one response
+validation_clean <- validation_clean %>% filter(!(ip_address %in% check_ip$ip_address))
+            
+
+#join the data with info on the questions
+validation_clean_matches <- left_join(validation_clean, obt_modules_info)
+
+#find the questions where I spelled coachs and mouths off to incorrectly in the obt_modules file 
+needs_fixing <- validation_clean_matches %>% 
+                mutate(selection = tolower(selection),
+                       optimal_behavior_all = tolower(optimal_behavior_all)) %>% 
+                filter((selection != optimal_behavior_all) & 
+                         (selection != stimuli_behavior_all)) %>% 
+                select(selection, optimal_behavior_all, stimuli_behavior_all) %>% distinct()
+
+#fix those misspellings 
+#identify whether respondent picked the optimal behavior
+validation_clean_matches <- validation_clean_matches %>% 
+                            mutate(lower_selection = tolower(selection),
+                                   lower_optimal_behavior_all = tolower(optimal_behavior_all),
+                                   lower_optimal_behavior_all = str_replace_all(lower_optimal_behavior_all,
+                                                                                "coachs", "coaches"),
+                                   stimuli_behavior_all = str_replace_all(stimuli_behavior_all,
+                                                                                "mouthes off to", "mouths off to")) %>% 
+                            mutate(chose_opt_behavior = if_else(selection == lower_optimal_behavior_all, 1, 0))
+
+#recalculate the distances for peace of mind 
+#standardize distance measure to help with the model
+obt_modules_original <- read_csv(here("data/obt_modules.csv"))
+obt_modules <- obt_modules_original %>% 
+               mutate(actor = str_replace_all(actor, " ", "_"),
+                      object = str_replace_all(object, " ", "_"),
+                      optimal_behavior = str_replace_all(optimal_behavior, " ", "_"),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, " ", "_"),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, "bend", "bluff"),
+                      optimal_behavior = tolower(optimal_behavior),
+                      stimuli_behavior = str_replace_all(stimuli_behavior, "baits", "bait")) %>% 
+              select(actor, object, optimal_behavior, stimuli_behavior, mod, gp) %>% 
+              pivot_longer(optimal_behavior:stimuli_behavior, names_to = "behavior_type", values_to = "opt_term") %>% 
+              left_join(sims_df) %>% select(-term) %>% mutate(term = opt_term) %>% select(-opt_term) %>% 
+              left_join(us_2015_full) %>% 
+              filter(type == "behavior") %>% 
+              select(-c(E2, P2, A2, type, country, year)) %>% 
+              rowwise() %>% 
+              mutate(distance = (E - opt_E)^2 + (P - opt_P)^2 + (A - opt_A)^2) %>% 
+              select(actor, object, mod, gp, behavior_type, distance) %>% 
+              pivot_wider(names_from = behavior_type, values_from = distance) %>% 
+              mutate(final_distance = abs(stimuli_behavior - optimal_behavior),
+                     final_distance_std = scale(final_distance, center = TRUE, scale = TRUE)) %>% 
+              mutate(act_initial = case_when(actor == "bailiff" ~ "bl",
+                                                   actor == "civil_engineer" ~ "ce",
+                                                   actor == "cook" ~ "ck",
+                                                   actor == "crane_operator" ~ "co",
+                                                   actor == "defense_attorney" ~ "da",
+                                                   actor == "dental_hygienist" ~ "dh",
+                                                   actor == "dentist" ~ "dt",
+                                                   actor == "firefighter" ~ "ff",
+                                                   actor == "foreman" ~ "fm",
+                                                   actor == "musician" ~ "mu",
+                                                   actor == "nurse" ~ "nr",
+                                                   actor == "nutritionist" ~ "nt",
+                                                   actor == "pediatrician" ~ "pd",
+                                                   actor == "surgeon" ~ "sr",
+                                                   actor == "teacher" ~ "tr",
+                                                   actor == "technician" ~ "te"),
+                           obj_initial = case_when(object == "bailiff" ~ "bl",
+                                                   object == "civil_engineer" ~ "ce",
+                                                   object == "cook" ~ "ck",
+                                                   object == "crane_operator" ~ "co",
+                                                   object == "defense_attorney" ~ "da",
+                                                   object == "dental_hygienist" ~ "dh",
+                                                   object == "dentist" ~ "dt",
+                                                   object == "firefighter" ~ "ff",
+                                                   object == "foreman" ~ "fm",
+                                                   object == "musician" ~ "mu",
+                                                   object == "nurse" ~ "nr",
+                                                   object == "nutritionist" ~ "nt",
+                                                   object == "pediatrician" ~ "pd",
+                                                   object == "surgeon" ~ "sr",
+                                                   object == "teacher" ~ "tr",
+                                                   object == "technician" ~ "te"),
+                           identifier = paste(mod, gp, act_initial, obj_initial, sep = "_"),
+                           identifier = paste0("x", identifier))
+  
+obt_og_join <- obt_modules_original %>% select(actor, object, mod, gp, optimal_behavior, stimuli_behavior)            
+
+#make full obt_modules table for the appendix
+obt_modules_appendix <- obt_modules %>% 
+                        select(mod, gp, actor, object, 
+                               final_distance, final_distance_std, identifier) %>% 
+                        mutate(actor = str_replace_all(actor, "_", " "),
+                               object = str_replace_all(object, "_", " ")) %>% 
+                        left_join(obt_og_join) %>% 
+                        select(mod, gp, actor, object, optimal_behavior, 
+                               stimuli_behavior, final_distance, final_distance_std) %>% 
+                        mutate(final_distance_std = as.numeric(final_distance_std)) %>% 
+                        gt() %>% 
+                        fmt_number(
+                        columns = c(final_distance,final_distance_std),
+                        decimals = 3,
+                        use_seps = FALSE)
+
+#data frame ready for analysis
+validation_clean_analysis <- left_join(validation_clean_matches, obt_modules, by = "identifier")
+#sanity check :) 
+check_test <- validation_clean_analysis %>% 
+              filter(is.na(final_distance_std))
+
+
+#making main analysis data frame 
+#only including the fixed modules 1, 13, and 14
+validation_main_analysis <- validation_clean_analysis %>% 
+                            filter(old_mod_13_14 != 1) %>% 
+                            filter(old_mod_1 != 1)
+
+
+library(lme4)
+#baseline model
+baseline_mod_freq <- glmer(formula = chose_opt_behavior ~ (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+#model including distance
+distance_mod_freq <- glmer(formula = chose_opt_behavior ~ final_distance_std + 
+                           (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+#model including controls
+distance_mod_freq_control <- glmer(formula = chose_opt_behavior ~ final_distance_std + sex + education +
+                                age_std + (1 | module / response_id), 
+                    family = "binomial",
+                    data = validation_main_analysis)
+
+#main model results
+stargazer::stargazer(baseline_mod_freq, distance_mod_freq, distance_mod_freq_control,
+                     format = "html", out = here("output/main_model_output.html"))
+
+#making figure 
+res_figure <- plot_model(distance_mod_freq_control, type = "pred", terms="final_distance_std [all]")
+res_out <- res_figure + theme_minimal() + labs(title = "Predicted Probability of choosing optimal behavior",
+                                    y = "probability of choosing optimal behavior",
+                                    x = "distance between optimal behavior and random stimuli behavior")
+
+ggsave(filename = here("output/model_figure.png"), res_out)
+
+logit2prob <- function(logit){
+  odds <- exp(logit)
+  prob <- odds / (1 + odds)
+  return(prob)
+}
+
+logit2prob(0.94350)
+
+```
+
+
+```{r, eval = FALSE}
+validation_approve <- validation_clean %>% 
+                      select(rid, pass_manip_check, reject_manip_check) %>% distinct() %>% 
+                      mutate(Answer.surveycode = as.character(rid),
+                             Approve = as.character(pass_manip_check),
+                             Reject = as.character(reject_manip_check)) %>% 
+                      select(-c(rid, pass_manip_check, reject_manip_check))
+
+
+batch_1 <- read_csv(here("data/batch_1.csv")) %>% select(-c(Approve, Reject))
+batch_1 <- left_join(batch_1, validation_approve, by = "Answer.surveycode")
+
+write_csv(batch_1, file = here("new_survey/mturk_approve_batch_1.csv"))
+
+
+batch_2 <- read_csv(here("data/batch_2.csv")) %>% select(-c(Approve, Reject))
+batch_2 <- left_join(batch_2, validation_approve, by = "Answer.surveycode")
+
+write_csv(batch_2, file = here("new_survey/mturk_approve_batch_2.csv"))
+
+
+batch_3 <- read_csv(here("data/batch_3.csv")) %>% select(-c(Approve, Reject))
+batch_3 <- left_join(batch_3, validation_approve, by = "Answer.surveycode")
+
+write_csv(batch_3, file = here("new_survey/mturk_approve_batch_3.csv"))
+
+
+q <- q %>% filter(ip_address %in% vc$ip_address)
+```
+

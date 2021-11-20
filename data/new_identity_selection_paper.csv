@@ -1,0 +1,17 @@
+﻿identity,block,prestige,ISCO08,old_siops,new_siops
+civil_engineer,1,high,2142,70,70
+technician,1,low,3112,39,52.72
+dentist,1,high,2261,70,70
+dental_hygienist,1,low,3251,44,49.87
+nutritionist,2,high,2265,52,52
+cook,2,low,7512,33,33
+teacher,2,high,2330,60,62.63
+musician,2,low,2652,45,46.09
+defense_attorney,3,high,2421,73,73.1
+bailiff,3,low,3411,50,54.17
+foreman,3,high,3123,60,45.94
+crane_operator,3,low,8343,33,32.39
+firefighter,4,low,5411,35,35
+pediatrician,4,high,2211,78,78
+surgeon,4,high,2212,78,78
+nurse,4,low,"2221, 3221",49,49.025
