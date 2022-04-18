@@ -3,9 +3,10 @@ title: "New Appendix"
 author: "Em Maloney"
 date: "11/19/2021"
 output:
-  word_document: default
   html_document:
     df_print: paged
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -18,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 ### Occupations Table
 
-```{r}
+```{r, results = 'asis'}
 library(gssr)
 library(tidyverse)
 library(inteRact)
@@ -64,8 +65,7 @@ new_df <- left_join(identities_info, gss_join)
 isco88_matches <- new_df %>% 
                   group_by(term) %>%
                   select(term, isco88) %>% distinct() %>% 
-                  summarise(isco88_matches = str_c(toString(isco88), collapse = ", "),
-                            avg_siops = ) %>% ungroup()
+                  summarise(isco88_matches = str_c(toString(isco88), collapse = ", ")) %>% ungroup()
 
 full_df <- new_df %>%  group_by(term, blocks_4, def_score, E, P, A) %>% 
                  summarise(def_score = round(def_score, digits = 2),
@@ -81,11 +81,11 @@ full_df <- new_df %>%  group_by(term, blocks_4, def_score, E, P, A) %>%
 
 full_df <- left_join(full_df, isco88_matches)
 
-full_df <- full_df %>% select(term, osg, E, P, A, def_score, avg_siops, avg_sei, isco88_matches, isco08_matches)
+full_df <- full_df %>% dplyr::select(term, osg, E, P, A, def_score, avg_siops, avg_sei, isco88_matches, isco08_matches)
 
 kable(full_df, caption = "Occupational Identities",
       col.names = c("Identity", "OSG", "E", "P", "A","Deference Score", "Avg SIOPS", "Avg SEI", "ISCO88", "ISCO08"), 
-      format = "html", out = here("output/check_all_occ_id_table.html"))
+      format = "pandoc", out = here("output/check_all_occ_id_table.html"))
 ```
 
 \newpage
@@ -93,9 +93,9 @@ kable(full_df, caption = "Occupational Identities",
 ### Appendix B 
 
 #### Descriptive Statistics for Analytic Sample 
-```{r}
+```{r, results = 'asis'}
 #selected occupational identities 
-ids <- read_csv(here("data/new_identity_selection_final.csv"))
+ids <- read_csv(here("data/new_identity_selection_paper.csv"))
 ids <- ids[1:16,]
 
 #create simulation dataset
@@ -103,10 +103,21 @@ sims <- tibble(actor = rep(unique(ids$identity), 16),
                    object = rep(unique(ids$identity), each = 16))
 
 #calculate the EPA for optimal behavior 
-sims_df <- sims %>% rowwise() %>%
-            mutate(b = list(maximally_confirm_behavior(actor = actor,
-                                                       object = object, equation = "us"))) %>%
-            unnest(b)
+#create simulation dataset
+sims <- tibble(actor = rep(unique(ids$identity), 16),
+                   object = rep(unique(ids$identity), each = 16))
+
+sims <- reshape_events_df(sims, df_format = "wide",
+                          dictionary_gender = "average",
+                          dictionary_key = "usfullsurveyor2015")
+sims_df <- sims %>% 
+           group_by(event_id, event) %>% 
+           nest() %>% 
+           dplyr::ungroup() %>%
+           dplyr::mutate(eq_info = "nc1978_male") %>%
+           dplyr::mutate(opt_behavior = purrr::map2(data, eq_info, maximally_confirm_behavior))
+
+sims_df <- sims_df %>% unnest_wider(opt_behavior) %>% separate(event, into = c("actor", "object"), sep = " ")
 
 
 library(sjPlot)
@@ -295,7 +306,7 @@ tbl_summary(descriptive_table)
 ### Appendix C
 
 #### Full List of Stimuli 
-```{r}
+```{r, results = 'asis'}
 obt_modules_appendix
 ```
 
@@ -326,7 +337,7 @@ distance_mod_freq_control <- glmer(formula = chose_opt_behavior ~ final_distance
                     data = validation_main_analysis)
 
 stargazer::stargazer(baseline_mod_freq, distance_mod_freq, distance_mod_freq_control,
-                     format = "html", out = here("output/main_model_output.html"),
+                     format = "html", out = here("output/check_main_model_output.html"),
                      dep.var.labels = c("Chose Optimal Behavior"),
                      covariate.labels = c("Distance (Std)",
                                         "Sex: Male",

@@ -120,6 +120,58 @@ blocks_table %>% gt() %>% fmt_number(
   )
 ```
 
+#correlation figure
+```{r}
+#read in the data
+#blocks <- read_csv(here("data/block_info_bayesact.csv"))
+#deference_scores <- read_csv(here("data/BayesACT-MeanDeflection.csv"))
+#cw <- read_csv(here("data/new_crosswalk.csv"))
+
+#a bit of data cleaning 
+deference_scores <- deference_scores %>% 
+                    mutate(term = str_remove(term, "i_")) %>% 
+                    filter(term != "dishwasher")
+
+identities_info <- left_join(blocks, deference_scores)
+identities_info <- left_join(identities_info, cw)
+
+library(gssr)
+data("gss_all")
+gss_all <- gss_all %>% 
+            select(isco88, isco08) %>% 
+            distinct()
+
+gss_join <- gss_all %>% 
+            filter(!is.na(isco08) & isco88 != 110 & isco08 != 9997) %>% 
+            mutate(isco08 = as.character(isco08)) %>% 
+            rowwise() %>% 
+            mutate(sei08 = isco08toisei08(isco08),
+                   siops08 = isco08tosiops08(isco08))
+
+new_df <- left_join(identities_info, gss_join)
+
+#write_csv(new_df, file = here("data/deference_prestige.csv"))
+
+new_df_long <- new_df %>% 
+               pivot_longer(cols = sei08:siops08, names_to = "measure", values_to = "prestige") %>% 
+               mutate(measure = recode(measure, "sei08" = "socio-economic index", "siops08" = "occ prestige scale"),
+                      blocks_4 = recode(blocks_4, "1" = "everyday specialists", "2" = "service-to-society", "3" = "disagreeably powerful", "4" = "actively revered"))
+
+
+siops <- ggplot(data = new_df_long, 
+                mapping = aes(x = prestige, y = def_score, label = term, 
+                              color = as.factor(blocks_4),
+                              shape = as.factor(blocks_4))) + 
+      geom_point() + theme_minimal() + labs(y = "Deference Score", 
+                                            x = "Prestige Measure",
+                                            color = "Occupational Status Group",
+                                            shape = "Occupational Status Group") + facet_wrap(~measure)
+
+ggsave(filename = here("output/check_appendix_corr_plot.png"), siops, width = 10)
+```
+
+
+
 ### Methods 
 
 The analytic design for this paper takes two forms: simulation study and validation. In the former, we find the optimal behavior between all possible dyads of the identities that make up our analytic sample - a total of 256 behaviors. In Affect Control Theory, finding the optimal behavior is a minimization problem: given the EPA profile of the specified actor and object, and the impression formation equation, you solve for the EPA profile of the behavior that *minimizes* dislocation in EPA space for each element of the event: the actor identity, the object identity, and the behavior. The result of this optimization is a three-digit EPA profile specifying the Evaluation, Potency, and Activity of a behavior that maximally confirms both the actor and the object in an event. 
@@ -188,6 +240,7 @@ bad_behaviors <- c("cuddle", "nuzzle", "lust_for", "play_with", "ravish", "cares
 #find closest terms
 sims_opt_behavior <- sims_df %>% 
                      unnest_wider(opt_behavior) %>% 
+                     separate(event, into = c("actor", "object"), sep = " ") %>% 
                      rowwise() %>% 
            mutate(beh = list(closest_term(opt_E, opt_P, opt_A, term_typ = "behavior", 
                                           dictionary_key = "usfullsurveyor2015", gender = "average", max_dist = 5, num_terms = 5))) %>% 
@@ -197,21 +250,15 @@ sims_opt_behavior <- sims_df %>%
            arrange(ssd) %>% 
            slice(1)
 
-sims_opt_behavior <- sims_df %>% 
-           rowwise() %>% 
-           mutate(beh = list(closest_term(opt_E, opt_P, opt_A, term_typ = "behavior", max_dist = 5, num_terms = 5))) %>% 
-           unnest(beh) %>% 
-           filter(!(term_name %in% bad_behaviors)) %>% 
-           group_by(actor, object) %>% 
-           arrange(ssd) %>% 
-           slice(1)
 
 #write the data to file
 write_csv(sims_opt_behavior, file = here("data/check_optimal_behaviors_terms.csv"))
 
 
 #get info on status and prestige of the actors and objects 
-new_sims_long <- sims_df %>% mutate(id = row_number()) %>% 
+new_sims_long <- sims_df %>% 
+                     unnest_wider(opt_behavior) %>% 
+                     separate(event, into = c("actor", "object"), sep = " ") %>% mutate(id = row_number()) %>% 
                  pivot_longer(actor:object, names_to = "position", values_to = "identity") %>%
                  group_by(id) %>% mutate(event = str_c(identity, collapse = " ")) %>% ungroup() 
 
@@ -314,6 +361,8 @@ table_info <- new_sims_longer %>%
                                            p = Potency, 
                                            a = Activity, 
                                            term_typ = "behavior",
+                                           dictionary_key = "usfullsurveyor2015",
+                                           gender = "average",
                                            num_terms = 10,
                                            max_dist = 3))) %>%
     unnest(closest_beh) %>% 
@@ -357,6 +406,8 @@ table_info <- high_sims %>%
                mutate(closest_beh = list(closest_term(e = Evaluation, 
                                            p = Potency, 
                                            a = Activity, 
+                                            dictionary_key = "usfullsurveyor2015",
+                                           gender = "average",
                                            term_typ = "behavior",
                                            num_terms = 10,
                                            max_dist = 3))) %>%
@@ -397,6 +448,8 @@ table_info <- low_sims %>%
                mutate(closest_beh = list(closest_term(e = Evaluation, 
                                            p = Potency, 
                                            a = Activity, 
+                                            dictionary_key = "usfullsurveyor2015",
+                                           gender = "average",
                                            term_typ = "behavior",
                                            num_terms = 10,
                                            max_dist = 3))) %>%
@@ -510,6 +563,10 @@ validation_clean_matches <- validation_clean_matches %>%
                                                                                 "mouthes off to", "mouths off to")) %>% 
                             mutate(chose_opt_behavior = if_else(selection == lower_optimal_behavior_all, 1, 0))
 
+sims_df_joining <- sims_df %>% 
+                     unnest_wider(opt_behavior) %>% 
+                     separate(event, into = c("actor", "object"), sep = " ")
+
 #recalculate the distances for peace of mind 
 #standardize distance measure to help with the model
 obt_modules_original <- read_csv(here("data/obt_modules.csv"))
@@ -523,7 +580,7 @@ obt_modules <- obt_modules_original %>%
                       stimuli_behavior = str_replace_all(stimuli_behavior, "baits", "bait")) %>% 
               select(actor, object, optimal_behavior, stimuli_behavior, mod, gp) %>% 
               pivot_longer(optimal_behavior:stimuli_behavior, names_to = "behavior_type", values_to = "opt_term") %>% 
-              left_join(sims_df) %>% select(-term) %>% mutate(term = opt_term) %>% select(-opt_term) %>% 
+              left_join(sims_df_joining) %>% select(-term) %>% mutate(term = opt_term) %>% select(-opt_term) %>% 
               left_join(us_2015_full) %>% 
               filter(type == "behavior") %>% 
               select(-c(E2, P2, A2, type, country, year)) %>% 
@@ -620,7 +677,7 @@ distance_mod_freq_control <- glmer(formula = chose_opt_behavior ~ final_distance
 
 #main model results
 stargazer::stargazer(baseline_mod_freq, distance_mod_freq, distance_mod_freq_control,
-                     format = "html", out = here("output/main_model_output.html"))
+                     format = "html", out = here("output/check_main_model_output.html"))
 
 #making figure 
 res_figure <- plot_model(distance_mod_freq_control, type = "pred", terms="final_distance_std [all]")
@@ -628,7 +685,7 @@ res_out <- res_figure + theme_minimal() + labs(title = "Predicted Probability of
                                     y = "probability of choosing optimal behavior",
                                     x = "distance between optimal behavior and random stimuli behavior")
 
-ggsave(filename = here("output/model_figure.png"), res_out)
+ggsave(filename = here("output/check_model_figure.png"), res_out)
 
 logit2prob <- function(logit){
   odds <- exp(logit)
